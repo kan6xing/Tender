@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BStore>
+
+
+@foreach (var item in Model) {
+    <tr  ondblclick="editRow('/BDepartment/Edit/@item.StoreID');">
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmallNameStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinyinStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkStore)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.LinkManStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostalcodeStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkTelStore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendAddressStore)
+        </td>*@
+        <td>
+            @Ajax.ActionLink("编辑", "Edit", new { id = item.StoreID, SuperRef = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('存货仓库-编辑',700,500)" })
+             |
+             @Ajax.ActionLink("查看", "Details", new { id = item.StoreID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('存货仓库-查看')" })
+             |
+             @Ajax.ActionLink("删除", "Delete", new { id = item.StoreID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('存货仓库-删除')" })
+        </td>
+    </tr>
+}
+

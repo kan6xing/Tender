@@ -1,0 +1,30 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BDepartment>
+
+@foreach (var item in Model)
+{
+    <tr ondblclick="LoadShow('/BDepartment/Edit/@item.BNumber');">
+        <td>
+            @Html.DisplayFor(modelItem => item.BNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BSmallName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BPinyin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BRemark)
+        </td>
+        <td>
+            @Ajax.ActionLink("编辑", "Edit", new { id = item.BID, SuperRef = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('部门信息-编辑')" })
+            |
+            @Ajax.ActionLink("查看", "Details", new { id = item.BID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('部门信息-查看')" })
+            |
+            @Ajax.ActionLink("删除", "Delete", new { id = item.BID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('部门信息-删除')" })
+
+        </td>
+    </tr>
+}

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Bemp_GongGao>
+@foreach (var item in Model)
+{
+    <tr style="line-height:25px;" ondblclick="LoadShow('/Tender_GongGao/Details/@item.Tender_GongGaos.TaskID','招标公告-查看',750,500)">
+        <td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.SN)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.Name)
+        </td>
+        <td>
+            
+            @*@Html.DropDownListFor(modelItem => item.Tender_GongGaos.IsShenhe, new[] { new SelectListItem() { Text = "是", Value = "true" }, new SelectListItem() { Text = "否", Value = "false" } }, new { @disabled = "disabled" })
+            @Html.DropDownListFor(modelItem => item.IsPassShen, new[] { new SelectListItem() { Text = "已通过", Value = "true" }, new SelectListItem() { Text = "未通过", Value = "false" } }, new { @disabled = "disabled" })*@
+            @*@Html.DisplayFor(modelItem => item.IsPassShen)*@
+            @if(item.IsPassShen)
+            {
+            <span style="color:green">通过</span>
+            }else
+            {
+            <span style="color:red">未通过</span>
+            }
+        </td>
+        <td>
+            @if (item.Tender_GongGaos.IsZhongb != null && item.Tender_GongGaos.IsZhongb)
+            {
+                <span style="color:red">已结束</span>
+            }
+            else if (item.Tender_GongGaos.BeginDate == null || item.Tender_GongGaos.BeginDate > System.DateTime.Now.Date)
+            {
+                <span>未开始</span>
+            }
+            else if (item.Tender_GongGaos.BeginDate <= System.DateTime.Now.Date && item.Tender_GongGaos.EndDate >= System.DateTime.Now.Date)
+            {
+                <span style="color:green">进行中</span>
+            }
+            else
+            {
+                <span style="color: green">进行中</span>
+            }
+        </td>
+        <td>
+            @*@Html.DropDownListFor(modelItem => item.Tender_GongGaos.IsZhongb, new[] { new SelectListItem() { Text = "是", Value = "true" }, new SelectListItem() { Text = "否", Value = "false" } }, new { @disabled = "disabled" })
+            @Html.DropDownListFor(modelItem => item.IsZhongb, new[] { new SelectListItem() { Text = "已中标", Value = "true" }, new SelectListItem() { Text = "未中标", Value = "false" } }, new { @disabled = "disabled" })*@
+            @*@Html.DisplayFor(modelItem => item.IsZhongb)*@
+            @if (item.Tender_GongGaos.IsZhongb != null && item.Tender_GongGaos.IsZhongb)
+            { 
+                if(item.IsZhongb)
+                {
+                <span style="color:green">中标</span>
+                }else
+                {
+                <span style="color:red">未中标</span>
+                }
+            }
+            
+        </td>
+        <td class="text-danger">
+            @if(item.IsZhongb!=null&&item.IsZhongb==true)
+            {
+                @Html.DisplayFor(modelItem => item.TalkPrice)
+            }
+            
+        </td>
+        <td >
+            @Html.DisplayFor(modelItem=>item.PriceUnit)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.BeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tender_GongGaos.AssessEndDate)
+        </td>*@
+
+        @*<td>
+                @Html.DisplayFor(modelItem => item.Descs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>*@
+        <td>
+            @*@Ajax.ActionLink("编辑", "Edit", new { id = item.TaskID, SuperRef = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-编辑')" })*@
+            |
+            @Ajax.ActionLink("查看", "Details","Tender_GongGao", new { id = item.Tender_GongGaos.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-查看',1100,500)" })
+            |
+            @*@Ajax.ActionLink("删除", "Delete", new { id = item.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-删除')" })*@
+
+        </td>
+    </tr>
+}

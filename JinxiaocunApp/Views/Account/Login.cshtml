@@ -1,0 +1,56 @@
+﻿@model JinxiaocunApp.Models.LoginModel
+
+@{
+    ViewBag.Title = "登录";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section id="loginForm">
+<h2>欢迎登录.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @*@using (Ajax.BeginForm("Login",new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace }))
+    {*@
+    @*@Html.AntiForgeryToken()*@
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Log in Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName, new { style = "width:70px" })
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password, new { style = "width:70px" })
+                @*<label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>*@
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="登录" class="btn btn-default" />
+    </fieldset>
+    <p>
+        如果您没有账号，请先<strong> @Html.ActionLink("注册", "Register",null, new { style = "color: rgb(66, 139, 202);font-size:13pt;" })</strong>
+        @*@Ajax.ActionLink("注册", "Register", new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace }) .*@
+    </p>
+    }
+</section>
+
+@*<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>*@
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+</script>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

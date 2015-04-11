@@ -1,0 +1,85 @@
+﻿@model JinxiaocunApp.Models.Bemp_GongGao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Bemp_GongGao</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bemplyees.NumberEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bemplyees.NumberEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tender_GongGaos.SN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tender_GongGaos.SN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LostPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LostPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TalkPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TalkPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceUnit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceUnit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkMan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkMan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsZhongb)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsZhongb)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsPassShen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsPassShen)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BGid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

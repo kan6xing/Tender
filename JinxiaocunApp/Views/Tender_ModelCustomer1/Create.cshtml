@@ -1,0 +1,370 @@
+﻿@model JinxiaocunApp.Models.Tender_ModelCustomer1
+
+@{
+    ViewBag.Title = "供应商投标";
+}
+@if (1 == 2)
+{
+    <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+}
+<h2>供应商投标</h2>
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "tender_div_cust", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "tender_cust_Secess" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tender_ModelCustomer1</legend>
+        <table class="table-striped table-hover table-bordered" width="100%" style="line-height:26px">
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.bemp_Gonggao.Tender_GongGaos.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.bemp_Gonggao.Tender_GongGaos.Name)
+                </td>
+                <td>
+                    @Html.LabelFor(model=>model.bemp_Gonggao.Tender_GongGaos.BeginDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>model.bemp_Gonggao.Tender_GongGaos.BeginDate)
+                </td>
+                <td>
+                    @Html.LabelFor(model=>model.bemp_Gonggao.Tender_GongGaos.EndDate)
+                </td>
+                <td width="100px">
+                    @Html.DisplayFor(model=>model.bemp_Gonggao.Tender_GongGaos.EndDate)
+                </td>
+                <td>
+                    <label>供应商名称</label>
+                </td>
+                <td>
+                    @User.Identity.Name
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>本次招标轮次</label>
+                </td>
+                <td>
+                    <input type="text" readonly="readonly" id="LunciLab" name="LunciLab" value="@ViewBag.Lunci" class="form-control" />
+                </td>
+                <td>
+                    <label>离本轮竞标结束还有</label>
+                </td>
+                <td>
+                    
+                    <input type="text" readonly="readonly" id="EndTime" name="EndTime" value="@ViewBag.Jieshu" class="form-control" />
+                        
+                   
+                </td>
+                <td>
+                    @if(ViewBag.IsSmall)
+                    {
+                        <label>
+                        上一轮最低价
+                        </label>
+                    }else
+                    {
+                        <label>
+                        上一轮最高价
+                    </label>
+                    }
+                    
+                </td>
+                <td>
+                    <input type="text" readonly="readonly" id="PriceShangLow" name="PriceShangLow" value="@ViewBag.ShangDi" class="form-control" />
+                </td>
+                <td>
+                    <label>您上一轮投标价</label>
+                </td>
+                <td>
+                    <input type="text" readonly="readonly" id="PriceShang" name="PriceShang" value="@ViewBag.Shanglun" class="form-control" />
+                </td>
+               
+            </tr>
+            <tr>
+                <td >
+                    <label>下轮开始时间</label>
+                </td>
+                <td>
+                    <input type="text" readonly="readonly" id="TimeXia" name="TimeXia" value="@ViewBag.TimeXia" class="form-control" />
+                </td>
+                <td>
+                    <label>本轮报价</label>
+                </td>
+                <td width="100px">
+                   
+                     @Html.TextBoxFor(model => model.PriceThree, new { @class = "form-control" })
+               
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.PriceUnit)
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-info">确认</button>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" height="60px">
+                    @if(ViewBag.IsSmall)
+                    {
+                        <strong id="dangerStr" class="text-danger" hidden="hidden">
+                        请注意，此刻有多家供应商报出了相同的最低价。
+                    </strong>
+                    }
+                    else
+                    {
+                        <strong id="dangerStr" class="text-danger" hidden="hidden">
+                        请注意，此刻有多家供应商报出了相同的最高价。
+                    </strong>
+                    }
+                    
+                    @Html.ValidationMessageFor(model => model.PriceThree)
+                    @*@Html.ValidationMessageFor(model => model.bemp_Gonggao.PayType)*@
+                    @Html.ValidationMessageFor(model => model.bemp_Gonggao.HandDate)
+                    <div id="tender_div_cust" class="alert alert-warning alert-dismissable" style="display:none; height:50px;">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.bemp_Gonggao.Tender_GongGaos.PayType)
+                </td>
+                <td>
+                    @Html.DisplayFor(model=>model.bemp_Gonggao.Tender_GongGaos.PayType)
+                    @*@Html.TextBoxFor(model => model.bemp_Gonggao.PayType, new { @class = "form-control" })*@
+                    
+                </td>
+                <td>
+                    承诺交货周期
+                </td>
+                <td colspan="2">
+                    <div class="input-group date form_datetime" data-date="" data-date-format="yyyy/mm/dd">
+                        @Html.TextBoxFor(model => model.bemp_Gonggao.HandDate, new { @class = "form-control", size = "16", @readonly = "" })
+                        @*<input class="form-control" size="16" type="text" value="" readonly>*@
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+
+                    </div>
+                    @*@Html.TextBoxFor(model => model.bemp_Gonggao.HandDate, new { @class = "form-control" })*@
+                </td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="8" style="background-color:#808080">
+                   <strong>报价清单</strong> 
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div id="custFile_@Model.EmpGonggaoID">
+
+                    </div>
+                </td>
+            </tr>
+            </table>
+        @Ajax.ActionLink("添加-报价清单", "CustFiles", "Tender_ModelCustomer1",new{id=Model.EmpGonggaoID}, new AjaxOptions { UpdateTargetId = "formDiv2", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv2','报价清单')" }, new { @class="btn btn-info"})
+                @Html.HiddenFor(model=>model.EmpGonggaoID)
+        <br />
+        <strong style="color:red">价格单位备注:</strong>  我司招标价格单位为元/标，意思是本次投标所涉及的所有标的物不能进行拆分，是本次投标的总价格。
+               
+    </fieldset>
+}
+<script>
+    function startC() {
+        var inc = document.getElementById('incomming');
+        var wsImpl = window.WebSocket || window.MozWebSocket;
+        //var form = document.getElementById('sendForm');
+        //var input = document.getElementById('sendText');
+
+        inc.innerHTML += "connecting to server ..<br/>";
+
+        // create a new websocket and connect
+        if (window.ws && window.ws != "undefined") {
+
+        } else {
+            window.ws = new wsImpl(svIpc);
+        }
+
+        // when data is comming from the server, this metod is called
+        ws.onmessage = function (evt) {
+            if (inc.innerHTML.length > 500)
+            {
+                inc.innerHTML = evt.data + '<br/>' + inc.innerHTML.substring(0, 500);
+            } else
+            {
+                inc.innerHTML = evt.data + '<br/>' + inc.innerHTML;
+            }
+            
+            
+
+            if (evt.data.indexOf('reload') >= 0)
+            {
+                $.ajax({
+                    url: "Tender_ModelCustomer1/LoadData/@Model.bemp_Gonggao.BGid",
+                    success: function (result) {
+                        //alert("ok" + result.Lunci);
+                        $("#LunciLab").val(result.Lunci);
+                        $("#EndTime").val(result.EndTime);
+                        $("#PriceShang").val(result.PriceShang);
+                        $("#PriceShangLow").val(result.PriceShangLow);
+                        $("#TimeXia").val(result.TimeXia);
+                        if (result.StrServ.indexOf("请注意") >= 0)
+                        {
+                            $("#dangerStr").show(1000);
+                        } else
+                        {
+                            $("#dangerStr").hide(1000);
+                        }
+                        if (window.ttt) {
+                            if (window.ttt == "undefined") {
+                                if ($("#LunciLab").val().indexOf("未") >= 0) {
+                                    //clearInterval(ttt);
+                                    //window.ttt = "undefined"
+                                } else {
+                                    window.ttt = setInterval("timeBack()", "1000");
+                                }
+                            } else {
+                                if ($("#LunciLab").val().indexOf("未") >= 0) {
+                                    clearInterval(ttt);
+                                    window.ttt = "undefined"
+                                } else {
+                                    //window.ttt = setInterval("timeBack()", "1000");
+                                }
+                            }
+                        } else {
+                            if ($("#LunciLab").val().indexOf("未") >= 0) {
+                                //clearInterval(ttt);
+                                //window.ttt = "undefined"
+                            } else {
+                                window.ttt = setInterval("timeBack()", "1000");
+                            }
+                        }
+                    }
+                });
+                @*$.post("Tender_ModelCustomer1/LoadData/@Model.bemp_Gonggao.BGid",
+                    {},
+                    function (datas) {
+                        datas.
+                    });
+                $("#formDiv1")*@
+            }
+        };
+
+        // when the connection is established, this method is called
+        ws.onopen = function () {
+            inc.innerHTML += '.. connection open<br/>';
+        };
+
+        // when the connection is closed, this method is called
+        ws.onclose = function () {
+            inc.innerHTML += '.. connection closed<br/>';
+            ws = "undefined";
+        }
+
+        @*form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var val ='@User.Identity.Name >>'+ input.value;
+            ws.send(val);
+            input.value = "";
+        });*@
+
+    }
+    $(function () {
+
+        $('.form_datetime').datetimepicker({
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minuteStep: 1,
+            minView: 2,
+            forceParse: 0
+        });
+
+
+        $("#custFile_@Model.EmpGonggaoID").load("/Tender_ModelCustomer1/IndexFile/@Model.EmpGonggaoID");
+        //try{
+        //    if (typeof (eval(startC)) == "function")
+        //    {
+        //        startC();
+        //    }
+        //}catch(e){
+
+        //}
+        startC();
+        if(window.ttt)
+        {
+            if(window.ttt=="undefined")
+            {
+                if ($("#LunciLab").val().indexOf("未") >= 0) {
+                    //clearInterval(ttt);
+                    //window.ttt = "undefined"
+                } else {
+                    window.ttt = setInterval("timeBack()", "1000");
+                }
+            }else
+            {
+                if ($("#LunciLab").val().indexOf("未") >= 0) {
+                    clearInterval(ttt);
+                    window.ttt = "undefined"
+                } else {
+                    //window.ttt = setInterval("timeBack()", "1000");
+                }
+            }
+        }else
+        {
+            if ($("#LunciLab").val().indexOf("未") >= 0) {
+                //clearInterval(ttt);
+                //window.ttt = "undefined"
+            } else {
+                window.ttt = setInterval("timeBack()", "1000");
+            }
+        }
+        //if (typeof (ttt) == "undefined")
+        //{
+        //    if ($("#LunciLab").val().indexOf("未") >= 0) {
+
+        //    } else {
+        //        window.ttt = setInterval("timeBack()", "1000");
+        //    }
+        //}
+        
+        ////timeBack();
+    })
+    
+    
+    function tender_cust_Secess() {
+        $("#tender_div_cust").show("drop", null, 500, callback_cust);
+        if ($("#tender_div_cust").text().indexOf("投标完成") >= 0)
+        {
+            window.ws.send("adreload");
+        }
+        
+    }
+    function callback_cust() {
+        setTimeout(function () {
+            $("#tender_div_cust").removeAttr("style").fadeOut();
+        }, 2000);
+    }
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+</script>
+@*<form id="sendForm">
+    <input id="sendText" placeholder="Text to send" />
+</form>*@
+<div style="max-height:150px; overflow-y:scroll;">
+    <pre id="incomming"></pre>
+</div>
+
+

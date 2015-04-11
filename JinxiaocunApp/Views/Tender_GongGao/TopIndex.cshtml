@@ -1,0 +1,53 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_GongGao>
+@{
+    ViewBag.Title = "TopIndex";
+}
+
+
+<table style="width:100%;">
+    @foreach (var item in Model)
+{       
+        <tr style=" height:22px; width:100%;">
+            <td >
+                <div style=" max-width: 180px; overflow: hidden; text-overflow: ellipsis; float: left;">
+
+                    <nobr>
+                        <img src='@Url.Content("Images/news/ak13.jpg")' />
+                        @if ((Request.IsAuthenticated && User.IsInRole("admin")) || ViewBag.ycid==0)
+                        {
+                            @Ajax.ActionLink(item.Name, "Details", new { id = item.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-查看',1100,550)" })
+                        }else
+                        {
+                            @item.Name
+                        }
+                        
+                    </nobr>
+                </div>
+            </td>
+            <td style="width:50px;">
+                @if (item.IsZhongb != null && item.IsZhongb)
+                {
+                <span style="color: red; font-size: 10pt;">已结束</span>
+                }
+                else if (item.BeginDate == null || item.BeginDate > System.DateTime.Now.Date)
+                {
+                    <span style=" font-size: 10pt;">未开始</span>
+                }
+                else if (item.BeginDate <= System.DateTime.Now.Date && item.EndDate >= System.DateTime.Now.Date)
+                {
+                    <span style="color: green; font-size: 10pt;">进行中</span>
+                }
+                else
+                {
+                    <span style="color: green; font-size: 10pt; ">进行中</span>
+                }
+            </td>
+            <td style="width:80px">
+                @Html.DisplayFor(model=>item.CreateDate)
+            </td>
+            
+            @*@Html.DisplayFor(model=> item.CreateDate, new { style="float:right;"})*@
+        </tr>
+   
+}
+</table>

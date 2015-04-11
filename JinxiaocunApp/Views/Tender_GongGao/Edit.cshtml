@@ -1,0 +1,158 @@
+﻿@model JinxiaocunApp.Models.Tender_GongGao
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tender_GongGao</legend>
+
+        @Html.HiddenFor(model => model.TaskID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SN)
+            @Html.ValidationMessageFor(model => model.SN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SSN)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SSN)
+            @Html.ValidationMessageFor(model => model.SSN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PartmentT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PartmentT)
+            @Html.ValidationMessageFor(model => model.PartmentT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProposerT)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProposerT)
+            @Html.ValidationMessageFor(model => model.ProposerT)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreateDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreateDate)
+            @Html.ValidationMessageFor(model => model.CreateDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BeginDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BeginDate)
+            @Html.ValidationMessageFor(model => model.BeginDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndDate)
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssessEndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AssessEndDate)
+            @Html.ValidationMessageFor(model => model.AssessEndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Types)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Types)
+            @Html.ValidationMessageFor(model => model.Types)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descs)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descs)
+            @Html.ValidationMessageFor(model => model.Descs)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PayType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PayType)
+            @Html.ValidationMessageFor(model => model.PayType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Counts)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Counts)
+            @Html.ValidationMessageFor(model => model.Counts)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Unit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Unit)
+            @Html.ValidationMessageFor(model => model.Unit)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectEndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProjectEndDate)
+            @Html.ValidationMessageFor(model => model.ProjectEndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Remark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remark)
+            @Html.ValidationMessageFor(model => model.Remark)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

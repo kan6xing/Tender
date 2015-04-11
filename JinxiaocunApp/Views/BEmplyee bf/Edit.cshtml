@@ -1,0 +1,98 @@
+﻿@model JinxiaocunApp.Models.BEmplyee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@*<h2><span class="label label-warning">编辑</span></h2>*@
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bemplyee/index')" }))
+{
+@*@using (Html.BeginForm()) {*@
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BEmplyee</legend>
+
+        @Html.HiddenFor(model => model.EmpID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberEmp)
+            @Html.ValidationMessageFor(model => model.NumberEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullNameEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullNameEmp)
+            @Html.ValidationMessageFor(model => model.FullNameEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmallNameEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmallNameEmp)
+            @Html.ValidationMessageFor(model => model.SmallNameEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinyinEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinyinEmp)
+            @Html.ValidationMessageFor(model => model.PinyinEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model=>model.bdepartment)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(Model=>Model.bdepartment_BID)*@
+            @Html.ValidationMessageFor(model => model.bdepartment_BID)
+            @Html.DropDownListFor(model => model.bdepartment_BID, new SelectList(new JinxiaocunApp.Models.JinxiaocunAppContext().BDepartments.ToList(),"BID","BFullName"))
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TelEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TelEmp)
+            @Html.ValidationMessageFor(model => model.TelEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StateEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StateEmp)
+            @Html.ValidationMessageFor(model => model.StateEmp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RemarkEmp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RemarkEmp)
+            @Html.ValidationMessageFor(model => model.RemarkEmp)
+        </div>
+
+        <p>
+            <input type="submit" value="保存" />
+        </p>
+    </fieldset>
+}
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+    $(function () {
+        PinyinAutoGen("FullNameEmp", "SmallNameEmp");
+        PinyinAutoGen("FullNameEmp", "PinyinEmp");
+    });
+    </script>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

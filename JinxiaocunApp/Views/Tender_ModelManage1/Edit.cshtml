@@ -1,0 +1,86 @@
+﻿@model JinxiaocunApp.Models.Tender_ModelManage1
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tender_ModelManage1</legend>
+
+        @Html.HiddenFor(model => model.MID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BeginTime1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BeginTime1)
+            @Html.ValidationMessageFor(model => model.BeginTime1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndTime1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndTime1)
+            @Html.ValidationMessageFor(model => model.EndTime1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BeginTime2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BeginTime2)
+            @Html.ValidationMessageFor(model => model.BeginTime2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndTime2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndTime2)
+            @Html.ValidationMessageFor(model => model.EndTime2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BeginTime3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BeginTime3)
+            @Html.ValidationMessageFor(model => model.BeginTime3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndTime3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndTime3)
+            @Html.ValidationMessageFor(model => model.EndTime3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tid, "tenderGonggao")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Tid", String.Empty)
+            @Html.ValidationMessageFor(model => model.Tid)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

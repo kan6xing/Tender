@@ -1,0 +1,50 @@
+﻿@model JinxiaocunApp.Models.BPartMenu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BPartMenu</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BOtherName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BOtherName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BParentID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BParentID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BLinkUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BLinkUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BOpenModel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BOpenModel)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

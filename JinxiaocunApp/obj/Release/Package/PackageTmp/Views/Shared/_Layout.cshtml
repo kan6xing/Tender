@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>投标公告 -海立美达投标系统</title>
+    @if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/menu")
+    @*@Styles.Render("~/Content/themes/base/css")*@
+    @*@Styles.Render("~/Content/bootstrap/css")*@
+
+    <link href="@Url.Content("~/Content/themes/redmond/jquery-ui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap/bootstrap-theme.css")" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/bootstrap/bootstrap-switch.css")" />
+    <link rel="stylesheet" type="text/css" href="/Content/timepicker/bootstrap-datetimepicker.min.css" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<link rel="stylesheet" type="text/css" href="/Content/bootstrap/bootstrap-datetimepicker.min.css" />*@
+          @Scripts.Render("~/bundles/menu")
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/pagin/jquery.jui_pagination.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Content/pagin/jquery.jui_pagination.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jui_pagination/localization/en.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="/Content/timepicker/jquery.timepicker.css" />
+    <script type="text/javascript" src="/Content/timepicker/jquery.timepicker.js"></script>
+
+
+    <script type="text/javascript" src="@Url.Content("~/Content/timepicker/bootstrap-datetimepicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/timepicker/bootstrap-datetimepicker.zh-CN.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/unslider.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/ckeditor/adapters/jquery.js")"></script>*@
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Nivo-slide/bar/bar.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Nivo-slide/dark/dark.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Nivo-slide/default/default.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Nivo-slide/light/light.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Nivo-slide/nivo-slider.css")" />
+<style>
+        #btmBar
+        {
+            height: 41px;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            z-index: 19;
+            margin: 0px;
+            left: 0px;
+            overflow: hidden;
+            text-align: center;
+        }
+    #bottombar {
+        text-align: left;
+        height: 31px;
+        bottom: 0px;
+        width: 100%;
+        z-index: 19;
+        margin: 0px;
+        left: 0px;
+        overflow: hidden;
+        background: url(/Images/bg_06.png) repeat-x scroll 0 0 transparent;
+    }
+        .tabsCla li .ui-icon-close
+        {
+            float: left;
+            margin: 0.4em 0.2em 0 0;
+            cursor: pointer;
+        }
+
+        td{
+            font-size:10pt;
+        }
+
+    </style>
+
+
+
+
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tenderIndex.js")"></script>
+    <script>
+
+
+    </script>
+</head>
+<body>
+    <div id="top">
+
+        @*<div class="top_1000; margn-top:5px;">
+
+
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                    </section>
+
+        </div>*@
+    </div>
+    <!--[if lte IE 9]>
+    <div id="warning_info" class="text-warning fade in mb_0">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <strong>您正在使用低版本浏览器，</strong> 在本页面的显示效果可能有差异。
+        建议您升级到
+        <a href="http://www.google.com/intl/zh-CN/chrome/" target="_blank">Chrome</a>
+        或以下浏览器：
+        <a href="www.mozilla.org/en-US/firefox/all/‎" target="_blank">Firefox</a> /
+        <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
+        <a href="http://www.opera.com/" target="_blank">Opera</a> /
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">
+            Internet Explorer 10
+        </a>
+    </div>
+    <![endif]-->
+    <div class="container" >
+        <div class="row" style="margin-bottom:-5px;">
+            <div class="col-md-12 col-lg-12">
+                <section>
+                    <div class="panel panel-info middle">
+                        <div style="float:left;">
+                            <img src="@Url.Content("~/images/news/logo.jpg")" height="50px" />
+                           <b style="font-size:21px;"> 招标管理平台</b>
+                        </div>
+                        @*<div style="float:left; height:30px; vertical-align:middle; background-color:red; padding-bottom:20px; margin-bottom:20px;">
+                            <h3 style="display:block; background-color:blue;" >
+                               <b> 招标管理平台</b>
+                            </h3>
+                        </div>*@
+                        @*<div class="navbar navbar-inverse  bs-docs-nav" style="float:right;margin-top:15px; ">
+                <a>asdf</a>
+            </div>*@
+
+                        <div id="rightMenuT" class="btn-group" style="float:right;margin-top:10px;margin-right:15px; ">
+                            <button id="indexBtn" name="MyTart/Index" type="button" class="btn btn-primary indexFoot">
+                                首页
+                            </button>
+                            <button id="indexBtn4" name="MyTart/SystemM" class="btn btn-default indexFoot">
+                                系统管理
+                            </button>
+                            @*<button class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span></button>*@
+                            <button id="indexBtn2" name="MyTart/Part1" class="btn btn-default indexFoot">
+                                投标管理
+                            </button>
+                            <button id="indexBtn3" name="MyTart/Part3" class="btn btn-default indexFoot">
+                                其他管理
+                            </button>
+
+                            @* <button class="btn btn-danger">
+                X</button>*@
+                        </div>
+
+                        <div class="slider-wrapper theme-bar" style="width:100%;border:0px;">
+                            <div id="slider" class="nivoSlider">
+                                <img src="@Url.Content("~/Images/news/banner_about.jpg")" data-thumb="@Url.Content("~/Images/news/banner_about.jpg")" alt="" data-transition="boxRainGrow" />
+                                <img src="@Url.Content("~/Images/news/banner_about1.jpg")" data-thumb="@Url.Content("~/Images/news/banner_about1.jpg")" alt="" />
+                                <img src="@Url.Content("~/Images/news/pan.png")" data-thumb="@Url.Content("~/Images/news/pan.png")" alt="" />
+                            </div>
+
+                        </div>
+
+                        @*<div class="banner">
+                            <ul>
+                                <li style="background-image: url('@Url.Content("~/Images/news/banner_about.jpg")'); "></li>
+                                <li style="background-image: url('@Url.Content("~/Images/news/banner_about1.jpg")');"></li>
+                                <li style="background-image: url('@Url.Content("~/Images/news/pan.png")');"></li>
+                            </ul>
+                        </div>*@
+                                    @*<img src="@Url.Content("~/Images/news/banner_about.jpg")" style="width:100%;" />*@
+
+                        </div>
+</section>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+               @* @RenderSection("Tfeatured", required: false)*@
+                <section>
+                @RenderBody()
+            </section>
+            </div>
+        </div>
+        <div class="row">
+            @RenderSection("footerT", required: false)
+        </div>
+    </div>
+
+
+     <div id="formDiv" title="������">
+    </div>
+    <div id="formDiv1" title="������">
+    </div>
+    <div id="formDiv2" title="招标系统"></div>
+         @RenderSection("scripts", required: false)
+
+    @*<script type="text/javascript" src='@Url.Content("~/Scripts/jquery.pin.js")'></script>*@
+    <script type="text/javascript" src='@Url.Content("~/Scripts/jquery.nivo.slider.js")'></script>
+
+      @*checkbox开关*@
+    @*<script type="text/javascript" src="@Url.Content("~/Content/bootstrap/bootstrap-switch.js")" charset="GBK"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/bootstrap/prism.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/bootstrap/index.js")"></script>*@
+    <script type="text/javascript">
+        $('#slider').nivoSlider({directionNav:true,controlNav:false});
+        //$("#rightMenuT").pin();
+        //if (window.chrome) {
+        //    //$('.banner li').css('background-size', '100% 100%');
+        //    $(".banner").hide();
+        //} else {
+        //    $(".banner").unslider({
+        //        speed: 500,               //  The speed to animate each slide (in milliseconds)
+        //        delay: 3000,
+        //        arrows: true,
+        //        fluid: true,
+        //        dots: true
+        //    });
+        //}
+        
+        $(function () {
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+
+        });
+    </script>
+</body>
+</html>

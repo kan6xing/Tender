@@ -1,0 +1,89 @@
+﻿@model JinxiaocunApp.Models.Bemp_GongGao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Bemp_GongGao</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bemplyees.NumberEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bemplyees.NumberEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tender_GongGaos.SN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tender_GongGaos.SN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LostPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LostPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TalkPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TalkPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceUnit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceUnit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkMan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkMan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsZhongb)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsZhongb)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsPassShen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsPassShen)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

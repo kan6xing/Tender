@@ -1,0 +1,39 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BEmplyee>
+
+<table class="table-striped table-hover table-bordered" width="100%">
+    <tr class="alert-info">
+        <th>
+            @Html.DisplayNameFor(model => model.NumberEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullNameEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemarkEmp)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkEmp)
+        </td>
+       
+        
+        <td>
+        @Html.Hidden("EmpListH", item.EmpID)
+            @*@Html.CheckBox("f1f", false, new{ value=item.EmpID})*@
+           @* @Html.ActionLink("删除", "Delete", new { id=item.EmpID })*@
+        </td>
+    </tr>
+}
+
+</table>

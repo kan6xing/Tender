@@ -1,0 +1,31 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_TongZhi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table >
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.TitleT)*@
+                <div style=" max-width: 180px; overflow: hidden; text-overflow: ellipsis; float: left;">
+
+                    <nobr>
+                        <img src='@Url.Content("Images/news/ak13.jpg")' />
+
+                        @Ajax.ActionLink(item.TitleT, "Details", new { id = item.TZID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('通知公告-查看',1100,500)" })
+                    </nobr>
+                </div>
+            </td>
+            <td style="width:80px">
+                @Html.DisplayFor(modelItem => item.CreateDateT)
+            </td>
+           
+            
+        </tr>
+    }
+
+</table>

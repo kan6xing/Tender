@@ -1,0 +1,59 @@
+﻿@model JinxiaocunApp.Models.Tender_TongZhi
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="row text-center  h3">
+    <b>@Model.TitleT</b>
+</div>
+<div class="row text-center" style="background-color: rgb(240, 240, 240); height: 30px; padding-top: 5px; padding-right: 10px; border-bottom: 1px solid rgb(204, 204, 204);">
+    <div class="pull-right" >
+        发表日期：@Html.DisplayFor(model => model.CreateDateT)
+    </div>
+</div>
+
+    @if (!string.IsNullOrEmpty(Model.CustFile))
+    {
+            <div class="row pull-right" style="height:30px;">
+            附件：<a style="color: #428BCA;" href="javascript:void(0);" onclick="downt('@Model.CustFile')">@Model.CustName</a>
+        </div>
+    }
+    else
+    {
+        
+    }
+
+<div class="row" style="padding-left:50px; background-color:rgb(249,249,249);">
+    @Html.Raw(Model.ContentT)
+</div>
+@*<fieldset>
+    <legend>Tender_TongZhi</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TitleT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TitleT)
+    </div>
+
+    <div class="display-label">
+         
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateDateT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContentT)
+    </div>
+    <div >
+    
+    </div>
+</fieldset>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TZID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

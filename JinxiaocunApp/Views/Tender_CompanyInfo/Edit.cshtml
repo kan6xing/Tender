@@ -1,0 +1,142 @@
+﻿@model JinxiaocunApp.Models.Tender_CompanyInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tender_CompanyInfo</legend>
+
+        @Html.HiddenFor(model => model.CompID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmpID, "bemplyee")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EmpID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EmpID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompName)
+            @Html.ValidationMessageFor(model => model.CompName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LinkMan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LinkMan)
+            @Html.ValidationMessageFor(model => model.LinkMan)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LinkType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LinkType)
+            @Html.ValidationMessageFor(model => model.LinkType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegisterMoney)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegisterMoney)
+            @Html.ValidationMessageFor(model => model.RegisterMoney)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PassYearCheck)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PassYearCheck)
+            @Html.ValidationMessageFor(model => model.PassYearCheck)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyType)
+            @Html.ValidationMessageFor(model => model.CompanyType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DelegateBook)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DelegateBook)
+            @Html.ValidationMessageFor(model => model.DelegateBook)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LicenceAtt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LicenceAtt)
+            @Html.ValidationMessageFor(model => model.LicenceAtt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CodeAtt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CodeAtt)
+            @Html.ValidationMessageFor(model => model.CodeAtt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TaxAtt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TaxAtt)
+            @Html.ValidationMessageFor(model => model.TaxAtt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CertAtt)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CertAtt)
+            @Html.ValidationMessageFor(model => model.CertAtt)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescsData)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescsData)
+            @Html.ValidationMessageFor(model => model.DescsData)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ItRemark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ItRemark)
+            @Html.ValidationMessageFor(model => model.ItRemark)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

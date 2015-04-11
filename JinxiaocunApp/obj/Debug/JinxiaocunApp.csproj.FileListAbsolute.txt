@@ -1,0 +1,183 @@
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll.config
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.pdb
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Antlr3.Runtime.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.Infrastructure.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Optimization.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\WebGrease.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.xml
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.csprojResolveAssemblyReference.cache
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.Migrations.up1.resources
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.Migrations.up2.resources
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.csproj.GenerateResource.Cache
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.dll
+D:\mypro\jxcwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.pdb
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll.config
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.pdb
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Antlr3.Runtime.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.Infrastructure.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.Framework.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.Providers.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Optimization.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\WebGrease.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.xml
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.dll
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.pdb
+E:\work\svnwork\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.csprojResolveAssemblyReference.cache
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll.config
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\JinxiaocunApp.pdb
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Antlr3.Runtime.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.Infrastructure.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.Framework.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Migrator.Providers.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Optimization.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\WebGrease.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\EntityFramework.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Newtonsoft.Json.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.Formatting.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Net.Http.WebRequest.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Helpers.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Http.WebHost.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Mvc.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.Razor.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Deployment.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\System.Web.WebPages.Razor.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.Data.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\WebMatrix.WebData.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.AspNet.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.Core.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OAuth.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\bin\Mono.Math.xml
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.csprojResolveAssemblyReference.cache
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.dll
+D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp\obj\Debug\JinxiaocunApp.pdb

@@ -1,0 +1,50 @@
+﻿@model JinxiaocunApp.Models.Permission
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Permission</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PermissionName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PermissionName)
+            @Html.ValidationMessageFor(model => model.PermissionName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SuperPerid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SuperPerid)
+            @Html.ValidationMessageFor(model => model.SuperPerid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PermissionToken)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PermissionToken)
+            @Html.ValidationMessageFor(model => model.PermissionToken)
+        </div>
+        <p>
+            <input type="submit" value="创建" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

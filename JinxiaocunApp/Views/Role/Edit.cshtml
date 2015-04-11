@@ -1,0 +1,153 @@
+﻿@model JinxiaocunApp.Models.Role
+@{
+    ViewBag.Title = "Edit";
+    List<JinxiaocunApp.Models.BEmplyee> emps = (List<JinxiaocunApp.Models.BEmplyee>)ViewData["emps"];
+
+    List<JinxiaocunApp.Models.BEmplyee> empM = Model.Emplyees;
+}
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/role/index')" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Role</legend>
+        @Html.HiddenFor(model => model.RoleId)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleName)
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleDesc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleDesc)
+            @Html.ValidationMessageFor(model => model.RoleDesc)
+        </div>
+        <div class="editor-label">
+            职员
+        </div>
+        <div class="editor-field" id="empdiv1">
+           @Html.EditorFor(model => model.Emplyees)
+            @*@foreach (JinxiaocunApp.Models.BMembership bm in Model.Members)
+        { 
+            @Html.EditorForModel(bm)
+        }*@ @*<table class="table-striped table-hover table-bordered" width="100%">
+                <tr class="alert-info">
+                    <th>
+                    编号
+                    </th>
+                    <th>
+                    
+                    </th>
+                </tr>
+                @foreach (JinxiaocunApp.Models.BMembership bm in Model.Members)
+                { 
+                    <tr>
+                        <td>
+                       @bm.UserId
+                        </td>
+                        <td>
+                          
+                        </td>
+                    </tr>
+                }
+                
+                </table>*@
+        </div>
+        <p>
+        
+
+            @Ajax.ActionLink("选择职员", "GetEmp", new { id = Model.RoleId }, new AjaxOptions { UpdateTargetId = "formDivT1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showT1('sm..-新建')" }, new { @class = "btn btn-info" })|
+            <input type="submit" value="Save" />
+            <a onclick="showDIV('formDivT1')" href="javascript:void(0);">职员</a> @*<button name="btnEmp" value="btnEmpv">职员</button>*@
+        </p>
+    </fieldset>
+    
+}
+
+<div id="formDivT1" title="进销存">
+        @using (Ajax.BeginForm("EmpList","Role", new AjaxOptions { UpdateTargetId = "empdiv1", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onCloseDIV('formDivT1')" }))
+{
+        <table>
+            <tr>
+                <th>
+                </th>
+                <th>
+                    编码
+                </th>
+                <th>
+                    全名
+                </th>
+                <th>
+                    简称
+                </th>
+                <th>
+                    拼音码
+                </th>
+                <th>
+                    电话
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var itemt in emps)
+            {
+                <tr>
+                    <td>
+                    @if (empM.Contains(itemt))
+                    {
+                        <input type="checkbox" name="EmpListCk" value="@itemt.EmpID" checked="checked" />
+                    }
+                    else
+                    { 
+                        <input type="checkbox" name="EmpListCk" value="@itemt.EmpID" />
+                    }
+                    
+                       @* @Html.CheckBox("EmpListCk", false, new { value = itemt.EmpID })*@
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemt.NumberEmp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemt.FullNameEmp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemt.SmallNameEmp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemt.PinyinEmp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemt.TelEmp)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id=item.EmpID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpID })*@
+                    </td>
+                </tr>
+            }
+        </table>
+        <button name="btnEmp" value="btnEmpV">选择职员</button>
+        @*<input type="submit" value="Save" />*@
+}
+    </div>
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+    $("#formDivT1").dialog({
+        autoOpen: false,
+        width: 500,
+        height: 400,
+        modal: true
+
+    });
+
+    function closeAndSubRole() {
+        onCloseDIV('formDivT1');
+        
+    }
+</script>

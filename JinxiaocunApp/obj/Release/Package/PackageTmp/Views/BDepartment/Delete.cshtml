@@ -1,0 +1,53 @@
+﻿@model JinxiaocunApp.Models.BDepartment
+
+@{
+    ViewBag.Title = "删除";
+}
+
+<h2>删除</h2>
+
+<h3>你确定要删除吗？</h3>
+<fieldset>
+    <legend>部门</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BFullName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BFullName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BSmallName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BSmallName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BPinyin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BPinyin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BRemark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BRemark)
+    </div>
+</fieldset>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bdepartment/index')" })){
+    <p>
+        <input type="submit" value="Delete" /> |
+       @* @Html.ActionLink("Back to List", "Index")*@
+    </p>
+}

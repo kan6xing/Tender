@@ -1,0 +1,51 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_TongZhi>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Ajax.ActionLink("新建", "Create", null, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','通知公告-新建',1100,600)",OnComplete="upecreate" }, new { @class = "btn btn-info" })
+    @*@Html.ActionLink("新建", "Create", "Tender_TongZhi", new { @class="btn btn-info"})*@
+</p>
+<table class="table-striped table-hover table-bordered" width="100%">
+    <tr class="alert-info">
+        <th>
+            @Html.DisplayNameFor(model => model.TitleT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreateDateT)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ContentT)
+        </th>*@
+        <th></th>
+    </tr>
+    <tbody id="@ViewBag.PageDiv">
+        @Html.Action("Pages", "Tender_TongZhi", new { SuperRef = ViewBag.SuperRef })
+        </tbody>
+</table>
+@Html.Action("PaginationPartial", "MyTart", new { id = ViewBag.Pagination, TotalPage = ViewBag.TotalPage, tbodyPages = ViewBag.PageDiv, ControllerName = "Tender_TongZhi" })
+<script>
+    var cedi;
+    function upecreate()
+    {
+        @*$.getScript("@Url.Content("~/Scripts/ckeditor/ckeditor.js")", function () {*@
+            //alert('jin');
+            
+            //if (cedi) {
+            //    alert('jin1');
+            //    cedi.destroy();
+            //    alert('jin2');
+            //}
+        //cedi = CKEDITOR.replace('ContentT');
+
+        setTimeout("fffun()",1000);
+        //})
+                
+    }
+    function fffun()
+    {
+        CKEDITOR.replace('ContentT');
+    }
+</script>

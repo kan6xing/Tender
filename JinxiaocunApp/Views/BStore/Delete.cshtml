@@ -1,0 +1,52 @@
+﻿@model JinxiaocunApp.Models.BStore
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>确定要删除吗?</h3>
+<fieldset>
+    <legend>BStore</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullNameStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullNameStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SmallNameStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SmallNameStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinyinStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinyinStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RemarkStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RemarkStore)
+    </div>
+</fieldset>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bstore/index')" })){
+    <p>
+        <input type="submit" value="删除" /> 
+       
+    </p>
+}

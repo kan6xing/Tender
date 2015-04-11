@@ -1,0 +1,50 @@
+﻿<div class="col-md-6 col-lg-6">
+    <div class="row">
+        <div class="panel panel-info" >
+            <div class="panel-headings">
+                <span>
+                    <img src="~/Images/news/ak15.jpg"></img>
+                </span>
+                <span>
+                    <strong>通知公告</strong>
+                </span>
+                <button id="indexBtnTZ" name='@Url.Content("~/Tender_TongZhi/MoreIndex/1")' style="float:right;" class="btn btn-link" onclick='AddShowDivN(this, $(this).attr("name"));'>更多>></button>
+            </div>
+            <div class="panel-body" style="min-height:133px;">
+                @Html.Action("IndexTop", "Tender_TongZhi")
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-info" style="height:243px">
+            <div class="panel-headings">
+                <span>
+                    <img src="~/Images/news/ak15.jpg"></img>
+                </span>
+                <span>
+                    <strong>历史招标</strong>
+                </span>
+                <button id="indexBtnL" name='@Url.Content("~/Tender_GongGao/Index")' style="float:right;" class="btn btn-link" onclick='AddShowDivN(this, $(this).attr("name"));'>更多>></button>
+            </div>
+            <div class="panel-body">
+                @Html.Action("TopIndex", "Tender_GongGao", new { id=1})
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-lg-6" style="padding-right:0px;">
+    <div class="panel panel-info" style="height:427px">
+        <div class="panel-headings">
+            <span>
+                <img src="~/Images/news/ak15.jpg"></img>
+            </span>
+            <span>
+                <strong>招标信息</strong>
+            </span>
+            <button id="indexBtnN" name='@Url.Content("~/Tender_GongGao/Index/1")' style="float:right;" class="btn btn-link" onclick='AddShowDivN(this, $(this).attr("name"));'>更多>></button>
+        </div>
+        <div class="panel-body">
+           @Html.Action("TopIndex", "Tender_GongGao")
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model JinxiaocunApp.Models.BStore
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BStore</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullNameStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullNameStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SmallNameStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SmallNameStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinyinStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinyinStore)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RemarkStore)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RemarkStore)
+    </div>
+</fieldset>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StoreID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_TongZhi>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDateT)
+        </td>
+        @*<td>
+                @Html.DisplayFor(modelItem => item.ContentT)
+            </td>*@
+        <td>
+            @Ajax.ActionLink("编辑", "Edit", "Tender_TongZhi", new { id = item.TZID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','通知公告-修改',1100,600)", OnComplete = "upecreate" })
+            @*@Html.ActionLink("编辑", "Edit", new { id = item.TZID })*@ |
+            @*@Html.ActionLink("详情", "Details", new { id = item.TZID }) |*@
+            @Ajax.ActionLink("详情", "Details", "Tender_TongZhi", new { id = item.TZID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','通知公告-查看',1100,600)" })|
+            @Ajax.ActionLink("删除", "Delete", "Tender_TongZhi", new { id = item.TZID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','通知公告-删除',1100,600)" })
+            @*@Html.ActionLink("删除", "Delete", new { id = item.TZID })*@
+        </td>
+    </tr>
+}

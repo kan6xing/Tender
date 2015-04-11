@@ -1,0 +1,187 @@
+﻿@model JinxiaocunApp.Models.BLinkCompany
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BLinkCompany</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ParentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ParentID)
+            @Html.ValidationMessageFor(model => model.ParentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberLinkComp)
+            @Html.ValidationMessageFor(model => model.NumberLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullNameLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullNameLinkComp)
+            @Html.ValidationMessageFor(model => model.FullNameLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmallNameLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmallNameLinkComp)
+            @Html.ValidationMessageFor(model => model.SmallNameLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TypeLinkComp)
+            @Html.ValidationMessageFor(model => model.TypeLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinyinLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinyinLinkComp)
+            @Html.ValidationMessageFor(model => model.PinyinLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AreaLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AreaLinkComp)
+            @Html.ValidationMessageFor(model => model.AreaLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AddressLinkComp)
+            @Html.ValidationMessageFor(model => model.AddressLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DutyCodeLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DutyCodeLinkComp)
+            @Html.ValidationMessageFor(model => model.DutyCodeLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TelLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TelLinkComp)
+            @Html.ValidationMessageFor(model => model.TelLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PhoneLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PhoneLinkComp)
+            @Html.ValidationMessageFor(model => model.PhoneLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmailLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmailLinkComp)
+            @Html.ValidationMessageFor(model => model.EmailLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LinkManLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LinkManLinkComp)
+            @Html.ValidationMessageFor(model => model.LinkManLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriceLevelLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PriceLevelLinkComp)
+            @Html.ValidationMessageFor(model => model.PriceLevelLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StateLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StateLinkComp)
+            @Html.ValidationMessageFor(model => model.StateLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BankLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BankLinkComp)
+            @Html.ValidationMessageFor(model => model.BankLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BankAccountLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BankAccountLinkComp)
+            @Html.ValidationMessageFor(model => model.BankAccountLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BarterDaysLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BarterDaysLinkComp)
+            @Html.ValidationMessageFor(model => model.BarterDaysLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BarterPercentLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BarterPercentLinkComp)
+            @Html.ValidationMessageFor(model => model.BarterPercentLinkComp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RemarkLinkComp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RemarkLinkComp)
+            @Html.ValidationMessageFor(model => model.RemarkLinkComp)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

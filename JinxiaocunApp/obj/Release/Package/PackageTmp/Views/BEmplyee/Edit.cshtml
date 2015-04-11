@@ -1,0 +1,336 @@
+﻿@model JinxiaocunApp.Models.BEmplyee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@*<h2><span class="label label-warning">编辑</span></h2>*@
+@*@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bemplyee/index')" }))
+{*@
+@using (Html.BeginForm("Edit", "BEmplyee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BEmplyee</legend>
+
+        @Html.HiddenFor(model => model.EmpID)
+
+        <table class="table-striped table-hover table-bordered" width="100%" style="line-height:26px">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.NumberEmp)
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.NumberEmp, new { @class = "form-control" })
+                        @*@Html.EditorFor(model => model.NumberEmp)*@
+                        @Html.ValidationMessageFor(model => model.NumberEmp)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LinkMan)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.LinkMan)
+                        @Html.ValidationMessageFor(model => model.LinkMan)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td width="100PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LinkType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.LinkType)
+                        @Html.ValidationMessageFor(model => model.LinkType)
+                    </div>
+                </td>
+                <td width="100PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.RegisterMoney)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.RegisterMoney)
+                        @Html.ValidationMessageFor(model => model.RegisterMoney)
+                    </div>
+                </td>
+                <td width="130PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PassYearCheck)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @*@Html.EditorFor(model => model.PassYearCheck)*@
+                        
+                        @Html.DropDownListFor(model => model.PassYearCheck, new[] { new SelectListItem() { Text = "是", Value = "true" }, new SelectListItem() { Text = "否", Value = "false" } })
+                        @Html.ValidationMessageFor(model => model.PassYearCheck)
+                    </div>
+                </td>
+            </tr>
+
+
+
+            <tr>
+
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CompanyType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DropDownList("CompanyType")
+                        @*@Html.DropDownListFor(model => model.CompanyType, (SelectList)ViewBag.CompanyType)*@
+                       
+                        @Html.ValidationMessageFor(model => model.CompanyType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                       
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                       
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                       
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                       
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DelegateBook)
+                    </div>
+                </td>
+                <td colspan="2">
+                    <input type="file" name="fDelegateBook" id="fDelegateBook" onchange="ffDelegateBook()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                        @Html.ValidationMessageFor(model => model.DelegateBook)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LicenceAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    <input type="file" name="fLicenceAtt" id="fLicenceAtt" onchange="ffLicenceAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                        @Html.ValidationMessageFor(model => model.LicenceAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CodeAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    <input type="file" name="fCodeAtt" id="fCodeAtt" onchange="ffCodeAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                        @Html.ValidationMessageFor(model => model.CodeAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.TaxAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    <input type="file" name="fTaxAtt" id="fTaxAtt" onchange="ffTaxAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                        @Html.ValidationMessageFor(model => model.TaxAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CertAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    <input type="file" name="fCertAtt" id="fCertAtt" onchange="ffCertAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                        @Html.ValidationMessageFor(model => model.CertAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PromiseAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    <input type="file" name="fPromiseAtt" id="fPromiseAtt" onchange="ffPromiseAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+                        @Html.ValidationMessageFor(model => model.PromiseAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.SecretAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    <input type="file" name="fSecretAtt" id="fSecretAtt" onchange="ffSecretAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+                        @Html.ValidationMessageFor(model => model.SecretAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DescsData)
+                    </div>
+                </td>
+
+
+                <td colspan="4">
+                    <div class="editor-field">
+                        @*@Html.EditorFor(model => model.DescsData, new { style = "width:100%;" })*@
+                        @Html.TextBoxFor(model => model.DescsData, new { style = "width:100%;" })
+                        @Html.ValidationMessageFor(model => model.DescsData)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ItRemark)
+                    </div>
+                </td>
+                <td colspan="4">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(model => model.ItRemark, new { style = "width:100%;" })
+                        @*@Html.EditorFor(model => model.ItRemark)*@
+                        @Html.ValidationMessageFor(model => model.ItRemark)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>备注</label>
+                </td>
+                <td colspan="5">
+                    <pre>
+1、供应商投标资质申请时，需要将资料填写完整；
+2、供应商提报相关资料后，经过我司资质评定，确定入围后才能将招标资料下载（如技术文件图纸等）及参与该项目竞标。
+3、如需上传多个文件，请自行打包成RAR格式上传。
+4、<span class="text-danger">请供应商到招标公告下载招标<strong style="color:red">承诺书及保密协议</strong> ，签署盖章后将其上传至此。</span> 
+                    </pre>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <input type="submit" value="保存" />
+        </p>
+        <div style="float:left; overflow:hidden; width:200px; height:1px;">
+            <div style="margin-left:9999px">
+                @Html.TextBoxFor(model => model.DelegateBook, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.TaxAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.CertAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.CodeAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.LicenceAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.PromiseAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.SecretAtt, new { style = "width:1px;", @readonly = "readonly" })
+            </div>
+        </div>
+    </fieldset>
+}
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+
+    function ffSecretAtt() {
+        $("#SecretAtt").val(document.getElementById("fSecretAtt").value);
+    }
+
+    function ffPromiseAtt() {
+        $("#PromiseAtt").val(document.getElementById("fPromiseAtt").value);
+    }
+    function ffTaxAtt() {
+        $("#TaxAtt").val(document.getElementById("fTaxAtt").value);
+    }
+    function ffCertAtt() {
+        $("#CertAtt").val(document.getElementById("fCertAtt").value);
+    }
+    function ffCodeAtt() {
+        $("#CodeAtt").val(document.getElementById("fCodeAtt").value);
+    }
+    function ffDelegateBook() {
+        $("#DelegateBook").val(document.getElementById("fDelegateBook").value);
+    }
+    function ffLicenceAtt() {
+        $("#LicenceAtt").val(document.getElementById("fLicenceAtt").value);
+    }
+    </script>
+

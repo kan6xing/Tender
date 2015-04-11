@@ -1,0 +1,45 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BEmplyee>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-info">
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    @Ajax.ActionLink("新建", "Create",null, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('职员信息-新建')" }, new { @class = "btn" })
+</p>
+<table class="table-striped table-hover table-bordered" width="100%">
+    <tr class="alert-info">
+        <th>
+            @Html.DisplayNameFor(model => model.NumberEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullNameEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmallNameEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinyinEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bdepartment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemarkEmp)
+        </th>
+        <th>
+        </th>
+    </tr>
+    <tbody id="@ViewBag.PageDiv">
+        @Html.Action("Pages","BEmplyee")
+    </tbody>
+</table>
+@*@Html.Action("PaginationPartial", "MyTart", new { id = ViewBag.Pagination, TotalPage = ViewBag.TotalPage, tbodyPages = ViewBag.PageDiv, ControllerName = "BEmplyee" })*@
+
+</div>

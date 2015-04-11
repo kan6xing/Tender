@@ -1,0 +1,57 @@
+﻿@model JinxiaocunApp.Models.Tender_ModelCustomer2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Tender_ModelCustomer2</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceLost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceLost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceUnit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceUnit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkMan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkMan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bemp_Gonggao.BGid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bemp_Gonggao.BGid)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

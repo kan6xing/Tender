@@ -1,0 +1,31 @@
+﻿@if (Request.IsAuthenticated) {
+    <text>
+        <script language="javaScript">
+            $(function () {
+                now = new Date(), hour = now.getHours();
+                var tspan = document.getElementById("LoginSpan");
+                tspan.innerHTML = "您好";
+                if (hour < 6) { tspan.innerHTML = "凌晨好！" }
+                else if (hour < 9) { tspan.innerHTML = "早上好！" }
+                else if (hour < 12) { tspan.innerHTML = "上午好！" }
+                else if (hour < 14) { tspan.innerHTML = "中午好！" }
+                else if (hour < 17) { tspan.innerHTML = "下午好！" }
+                else if (hour < 19) { tspan.innerHTML = "傍晚好！" }
+                else if (hour < 22) { tspan.innerHTML = "晚上好！" }
+                else { tspan.innerHTML = "夜里好！" }
+            })
+            
+
+        </script><span id="LoginSpan"></span>,
+ @Html.ActionLink(User.Identity.Name, "Details", "Bemplyee", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">退出</a>
+        }
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink("注 册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("登 陆", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

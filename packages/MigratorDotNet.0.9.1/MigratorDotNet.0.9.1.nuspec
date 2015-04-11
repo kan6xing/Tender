@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MigratorDotNet</id>
+    <version>0.9.1</version>
+    <title>Migrator.Net</title>
+    <authors>nick.hems,  dkode8</authors>
+    <owners>nick.hems,  dkode8</owners>
+    <licenseUrl>http://www.mozilla.org/MPL/</licenseUrl>
+    <projectUrl>http://code.google.com/p/migratordotnet/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Database migrations for .NET. Based on the idea of Rails ActiveRecord Migrations.</description>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <tags>Migrator Database DB Migration migratordotnet</tags>
+  </metadata>
+</package>

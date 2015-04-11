@@ -1,0 +1,27 @@
+﻿@model JinxiaocunApp.Models.Tender_TongZhi
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3 class="text-danger">确定要删除吗?</h3>
+<div class="row text-center  h3">
+    <b>@Model.TitleT</b>
+</div>
+<div class="row text-center" style="background-color: rgb(240, 240, 240); height: 30px; padding-top: 5px; padding-right: 10px; border-bottom: 1px solid rgb(204, 204, 204);">
+    <div class="pull-right">
+        发表日期：@Html.DisplayFor(model => model.CreateDateT)
+    </div>
+</div>
+<div class="row" style="padding-left:50px; background-color:rgb(249,249,249);">
+    @Html.Raw(Model.ContentT)
+</div>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "onReloadClose('tender_tongzhi/index','formDiv1')" ,OnFailure="alert('nosuccess..')"}))
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="删除" class="btn btn-danger" /> 
+        @*|
+        @Html.ActionLink("返回列表", "Index")*@
+    </p>
+}

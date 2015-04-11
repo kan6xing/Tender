@@ -1,0 +1,135 @@
+﻿@if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+<div class="panel panel-info" style="border-top-width: 5px; border-top-color: #5698E2">
+    
+    <div class="panel-body text-center text-primary">
+        版权所有：青岛海立美达股份有限公司&nbsp;&nbsp; 地址：青岛市即墨青威路1626号 &nbsp;&nbsp; 电话：0532-89063333 &nbsp;传真:0532-89066196
+        <br /><br />
+        技术支持：美辰信息 &nbsp;&nbsp;鲁ICP备13000003号
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        //                                $("input[type=submit], button")
+        //                                .button()
+        //                                .click(function (event) {
+        //                                    event.preventDefault();
+        //                                });
+
+        $("#shrink").click(function () {
+
+            $("#btmBar").animate({ height: '11px' }, 300, function () {
+                $("#shrink").hide();
+                $("#shrink2").show();
+            });
+
+        });
+
+        $("#shrink2").click(function () {
+
+            $("#shrink").show();
+            $("#shrink2").hide();
+            $("#btmBar").animate({ height: '40px' }, 300, function () {
+
+            });
+
+        });
+    });
+
+    $(".indexFoot").click(function () {
+        AddShowDivN(this, $(this).attr("name"));
+
+    });
+
+    var tthref1 = window.location.href.toLowerCase().indexOf("account", 0);
+    var tthref2 = window.location.href.toLowerCase().indexOf("bemplyee", 0);
+    var tthref3 = window.location.href.toLowerCase().indexOf("tender_tongzhi", 0);
+
+    if (tthref1 > 10 || tthref2 > 10 || tthref3 > 10) {
+        
+    } else {
+        $("#indexBtn").click();
+    }
+    
+
+    
+    //function AddShowDiv(obj, htmlurl) {
+        
+    //    var divName = $(obj).attr('id') + "div";
+    //    if (!$("#" + divName)[0]) {
+
+    //        var divTop1 = $('<div style="background-color:White;width:100%;height:100%; "></div>');
+    //        divTop1.attr('id', divName);
+
+
+    //        $('#topBody').children('div').each(function (aa) {
+    //            $(this).hide();
+    //        });
+
+    //        divTop1.show();
+
+    //        $('#topBody').append(divTop1);
+    //        $("#" + divName).load(htmlurl);
+
+    //    } else {
+    //        $('#topBody').children('div').each(function (aa) {
+    //            $(this).hide();
+    //            //                    var tid = $(this).attr("id")[0];
+    //            //                    $("#" + tid.substring(0, tid.length - 4)).removeClass("btn-warning");
+    //        });
+
+    //        $("#" + divName).show();
+    //    }
+
+    //    $(obj).siblings().removeClass("btn-warning").addClass("btn-default");
+
+    //    $(obj).removeClass("btn-default").addClass("btn-warning");
+
+    //    $("#indexBtn").removeClass().addClass("btn btn-primary indexFoot");
+
+    //}
+
+    //function AddShowDivN(obj, htmlurl) {
+    //    if ($('#topBody')) {
+
+    //    } else {
+    //        window.location.href = "/";
+    //    }
+    //    var divName = $(obj).attr('id') + "div";
+    //    if (!$("#" + divName)[0]) {
+
+    //        var divTop1 = $('<div style="background-color:White;width:100%;height:100%; "></div>');
+    //        divTop1.attr('id', divName);
+
+
+    //        $('#topBody').children('div').each(function (aa) {
+    //            $(this).hide();
+    //        });
+
+    //        divTop1.show();
+
+    //        $('#topBody').append(divTop1);
+    //        $("#" + divName).load(htmlurl);
+
+    //    } else {
+    //        $('#topBody').children('div').each(function (aa) {
+    //            $(this).hide();
+    //            //                    var tid = $(this).attr("id")[0];
+    //            //                    $("#" + tid.substring(0, tid.length - 4)).removeClass("btn-warning");
+    //        });
+
+    //        $("#" + divName).show();
+    //    }
+
+    //    //$(obj).siblings().removeClass("btn-warning").addClass("btn-info");
+
+    //    //$(obj).removeClass("btn-info").addClass("btn-warning");
+
+    //    //$("#indexBtn").removeClass().addClass("btn btn-primary indexFoot");
+
+    //}
+
+</script>

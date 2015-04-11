@@ -1,0 +1,122 @@
+﻿@model JinxiaocunApp.Models.BStore
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bstore/index')" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BStore</legend>
+
+        @Html.HiddenFor(model => model.StoreID)
+        <table class="table-striped table-hover table-bordered" width="100%">
+            <tr class="alert-info">
+                <th >基本信息</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+            @Html.LabelFor(model => model.NumberStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberStore)
+            @Html.ValidationMessageFor(model => model.NumberStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullNameStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullNameStore)
+            @Html.ValidationMessageFor(model => model.FullNameStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmallNameStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmallNameStore)
+            @Html.ValidationMessageFor(model => model.SmallNameStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinyinStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinyinStore)
+            @Html.ValidationMessageFor(model => model.PinyinStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RemarkStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RemarkStore)
+            @Html.ValidationMessageFor(model => model.RemarkStore)
+        </div>
+                </td>
+                
+            </tr>
+
+            <tr class="alert-info">
+                <th >
+                发货信息【发货信息将作为您物流单上的寄件人信息打印出来，请确保信息准确】
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="editor-label">
+            @Html.LabelFor(model => model.LinkManStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LinkManStore)
+            @Html.ValidationMessageFor(model => model.LinkManStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LinkTelStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LinkTelStore)
+            @Html.ValidationMessageFor(model => model.LinkTelStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PostalcodeStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PostalcodeStore)
+            @Html.ValidationMessageFor(model => model.PostalcodeStore)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SendAddressStore)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SendAddressStore)
+            @Html.ValidationMessageFor(model => model.SendAddressStore)
+        </div>
+                </td>
+            </tr>
+        </table>
+
+        
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+    $(function () {
+        PinyinAutoGen("FullNameStore", "SmallNameStore");
+        PinyinAutoGen("FullNameStore", "PinyinStore");
+    });
+</script>

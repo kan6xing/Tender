@@ -1,0 +1,413 @@
+﻿@model JinxiaocunApp.Models.BProduct
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BProduct</legend>
+
+        @Html.HiddenFor(model => model.ProductID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ParentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ParentID)
+            @Html.ValidationMessageFor(model => model.ParentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberProdu)
+            @Html.ValidationMessageFor(model => model.NumberProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullNameProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullNameProdu)
+            @Html.ValidationMessageFor(model => model.FullNameProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SmallNameProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SmallNameProdu)
+            @Html.ValidationMessageFor(model => model.SmallNameProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PinyinProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PinyinProdu)
+            @Html.ValidationMessageFor(model => model.PinyinProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AddressProdu)
+            @Html.ValidationMessageFor(model => model.AddressProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GuigeProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GuigeProdu)
+            @Html.ValidationMessageFor(model => model.GuigeProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.XinghaoProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.XinghaoProdu)
+            @Html.ValidationMessageFor(model => model.XinghaoProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WeightProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WeightProdu)
+            @Html.ValidationMessageFor(model => model.WeightProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsOrderProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsOrderProdu)
+            @Html.ValidationMessageFor(model => model.IsOrderProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NumberManagerProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NumberManagerProdu)
+            @Html.ValidationMessageFor(model => model.NumberManagerProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SupplyInfoProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SupplyInfoProdu)
+            @Html.ValidationMessageFor(model => model.SupplyInfoProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RemarkProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RemarkProdu)
+            @Html.ValidationMessageFor(model => model.RemarkProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitNameProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitNameProdu)
+            @Html.ValidationMessageFor(model => model.UnitNameProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitRelatinProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitRelatinProdu)
+            @Html.ValidationMessageFor(model => model.UnitRelatinProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BarcodeProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BarcodeProdu)
+            @Html.ValidationMessageFor(model => model.BarcodeProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SellerNumberProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SellerNumberProdu)
+            @Html.ValidationMessageFor(model => model.SellerNumberProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RetailPriceProdu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RetailPriceProdu)
+            @Html.ValidationMessageFor(model => model.RetailPriceProdu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice1Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice1Produ)
+            @Html.ValidationMessageFor(model => model.PreparePrice1Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice2Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice2Produ)
+            @Html.ValidationMessageFor(model => model.PreparePrice2Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice3Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice3Produ)
+            @Html.ValidationMessageFor(model => model.PreparePrice3Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice4Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice4Produ)
+            @Html.ValidationMessageFor(model => model.PreparePrice4Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice5Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice5Produ)
+            @Html.ValidationMessageFor(model => model.PreparePrice5Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitNameProdu1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitNameProdu1)
+            @Html.ValidationMessageFor(model => model.UnitNameProdu1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitRelatinProdu1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitRelatinProdu1)
+            @Html.ValidationMessageFor(model => model.UnitRelatinProdu1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BarcodeProdu1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BarcodeProdu1)
+            @Html.ValidationMessageFor(model => model.BarcodeProdu1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SellerNumberProdu1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SellerNumberProdu1)
+            @Html.ValidationMessageFor(model => model.SellerNumberProdu1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RetailPriceProdu1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RetailPriceProdu1)
+            @Html.ValidationMessageFor(model => model.RetailPriceProdu1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice1Produ1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice1Produ1)
+            @Html.ValidationMessageFor(model => model.PreparePrice1Produ1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice2Produ1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice2Produ1)
+            @Html.ValidationMessageFor(model => model.PreparePrice2Produ1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice3Produ1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice3Produ1)
+            @Html.ValidationMessageFor(model => model.PreparePrice3Produ1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice4Produ1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice4Produ1)
+            @Html.ValidationMessageFor(model => model.PreparePrice4Produ1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice5Produ1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice5Produ1)
+            @Html.ValidationMessageFor(model => model.PreparePrice5Produ1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitNameProdu2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitNameProdu2)
+            @Html.ValidationMessageFor(model => model.UnitNameProdu2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitRelatinProdu2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitRelatinProdu2)
+            @Html.ValidationMessageFor(model => model.UnitRelatinProdu2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BarcodeProdu2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BarcodeProdu2)
+            @Html.ValidationMessageFor(model => model.BarcodeProdu2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SellerNumberProdu2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SellerNumberProdu2)
+            @Html.ValidationMessageFor(model => model.SellerNumberProdu2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RetailPriceProdu2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RetailPriceProdu2)
+            @Html.ValidationMessageFor(model => model.RetailPriceProdu2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice1Produ2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice1Produ2)
+            @Html.ValidationMessageFor(model => model.PreparePrice1Produ2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice2Produ2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice2Produ2)
+            @Html.ValidationMessageFor(model => model.PreparePrice2Produ2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice3Produ2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice3Produ2)
+            @Html.ValidationMessageFor(model => model.PreparePrice3Produ2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice4Produ2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice4Produ2)
+            @Html.ValidationMessageFor(model => model.PreparePrice4Produ2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PreparePrice5Produ2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PreparePrice5Produ2)
+            @Html.ValidationMessageFor(model => model.PreparePrice5Produ2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pic1Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pic1Produ)
+            @Html.ValidationMessageFor(model => model.Pic1Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pic2Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pic2Produ)
+            @Html.ValidationMessageFor(model => model.Pic2Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pic3Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pic3Produ)
+            @Html.ValidationMessageFor(model => model.Pic3Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pic4Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pic4Produ)
+            @Html.ValidationMessageFor(model => model.Pic4Produ)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pic5Produ)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pic5Produ)
+            @Html.ValidationMessageFor(model => model.Pic5Produ)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,69 @@
+﻿@model JinxiaocunApp.Models.BPartMenu
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BPartMenu</legend>
+
+        @Html.HiddenFor(model => model.BID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BName)
+            @Html.ValidationMessageFor(model => model.BName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BOtherName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BOtherName)
+            @Html.ValidationMessageFor(model => model.BOtherName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BParentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BParentID)
+            @Html.ValidationMessageFor(model => model.BParentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BLinkUrl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BLinkUrl)
+            @Html.ValidationMessageFor(model => model.BLinkUrl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BOpenModel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BOpenModel)
+            @Html.ValidationMessageFor(model => model.BOpenModel)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

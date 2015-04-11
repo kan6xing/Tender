@@ -1,0 +1,63 @@
+﻿@model JinxiaocunApp.Models.BEmplyee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<fieldset>
+    <legend>BEmplyee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullNameEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullNameEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SmallNameEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SmallNameEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinyinEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinyinEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TelEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StateEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StateEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RemarkEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RemarkEmp)
+    </div>
+</fieldset>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmpID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

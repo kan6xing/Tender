@@ -1,0 +1,316 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div  class="panel panel-info" style=" width:100%; overflow:auto;">
+<p>
+    @Ajax.ActionLink("新建", "Create", null, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('商品信息-新建')" }, new { @class="btn"})
+</p>
+
+<table class="table-striped table-hover table-bordered" width="100%">
+        <tr class="alert-info">
+        <th>
+            @Html.DisplayNameFor(model => model.ParentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullNameProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmallNameProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinyinProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuigeProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XinghaoProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsOrderProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberManagerProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplyInfoProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemarkProdu)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.UnitNameProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitRelatinProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarcodeProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerNumberProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RetailPriceProdu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice1Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice2Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice3Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice4Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice5Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitNameProdu1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitRelatinProdu1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarcodeProdu1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerNumberProdu1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RetailPriceProdu1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice1Produ1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice2Produ1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice3Produ1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice4Produ1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice5Produ1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitNameProdu2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitRelatinProdu2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarcodeProdu2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerNumberProdu2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RetailPriceProdu2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice1Produ2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice2Produ2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice3Produ2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice4Produ2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreparePrice5Produ2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pic1Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pic2Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pic3Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pic4Produ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pic5Produ)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmallNameProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinyinProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuigeProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XinghaoProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsOrderProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberManagerProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplyInfoProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkProdu)
+        </td>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.UnitNameProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitRelatinProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarcodeProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellerNumberProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RetailPriceProdu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice1Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice2Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice3Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice4Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice5Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitNameProdu1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitRelatinProdu1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarcodeProdu1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellerNumberProdu1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RetailPriceProdu1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice1Produ1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice2Produ1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice3Produ1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice4Produ1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice5Produ1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitNameProdu2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitRelatinProdu2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarcodeProdu2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellerNumberProdu2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RetailPriceProdu2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice1Produ2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice2Produ2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice3Produ2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice4Produ2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreparePrice5Produ2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pic1Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pic2Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pic3Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pic4Produ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pic5Produ)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

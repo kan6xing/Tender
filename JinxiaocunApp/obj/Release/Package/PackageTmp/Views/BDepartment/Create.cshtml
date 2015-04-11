@@ -1,0 +1,80 @@
+﻿@model JinxiaocunApp.Models.BDepartment
+
+@{
+    ViewBag.Title = "Create";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "onReload('/bdepartment/index')"}))
+{
+@*@using (Html.BeginForm()) {*@
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BDepartment</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BNumber)
+            @Html.ValidationMessageFor(model => model.BNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BFullName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BFullName)
+            @Html.ValidationMessageFor(model => model.BFullName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BSmallName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BSmallName)
+            @Html.ValidationMessageFor(model => model.BSmallName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BPinyin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BPinyin)
+            @Html.ValidationMessageFor(model => model.BPinyin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BRemark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BRemark)
+            @Html.ValidationMessageFor(model => model.BRemark)
+        </div>
+
+        <p>
+            <input type="submit" value="创建" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
+    <script>
+        $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+        $(function () {
+            PinyinAutoGen("BFullName", "BSmallName");
+            PinyinAutoGen("BFullName", "BPinyin");
+        });
+
+    </script>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

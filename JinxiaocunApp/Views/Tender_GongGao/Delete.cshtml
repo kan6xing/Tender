@@ -1,0 +1,131 @@
+﻿@model JinxiaocunApp.Models.Tender_GongGao
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Tender_GongGao</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SSN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SSN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PartmentT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PartmentT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProposerT)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProposerT)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BeginDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BeginDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssessEndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssessEndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Types)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Types)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descs)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descs)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PayType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PayType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Counts)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Counts)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Unit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Unit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProjectEndDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectEndDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remark)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remark)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

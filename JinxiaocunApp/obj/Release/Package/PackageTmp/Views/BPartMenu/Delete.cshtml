@@ -1,0 +1,53 @@
+﻿@model JinxiaocunApp.Models.BPartMenu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>BPartMenu</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BOtherName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BOtherName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BParentID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BParentID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BLinkUrl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BLinkUrl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BOpenModel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BOpenModel)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

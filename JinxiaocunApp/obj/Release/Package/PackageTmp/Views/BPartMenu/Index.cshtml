@@ -1,0 +1,63 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BPartMenu>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table-striped table-hover table-bordered">
+    <tr class="alert-info">
+        <th>
+            @Html.DisplayNameFor(model => model.BID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOtherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BParentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BLinkUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOpenModel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItemm=>item.BID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOtherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BParentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BLinkUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOpenModel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BID })
+        </td>
+    </tr>
+}
+
+</table>

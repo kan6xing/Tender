@@ -1,0 +1,80 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_GongGao>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-info" style="text-align:center">
+    <h1 style="color: #2E6E9E"><b>招标公告</b></h1>
+
+    <p>
+
+    </p>
+    <table class="table-striped table-hover table-bordered" width="100%">
+        <tr class="alert-primary" style="line-height:27px">
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.SN)
+                </label>
+            </th>
+
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.Name)
+                </label>
+            </th>
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.Types)
+                </label>
+            </th>
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </label>
+            </th>
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.BeginDate)
+                </label>
+            </th>
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.EndDate)
+                </label>
+            </th>
+            <th>
+                <label>
+                    @Html.DisplayNameFor(model => model.AssessEndDate)
+                </label>
+            </th>
+            <th>
+                <label>状态</label>
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Descs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Counts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>*@
+            <th></th>
+        </tr>
+
+        <tbody id="@ViewBag.PageDiv">
+            @Html.Action("Pages", "Tender_GongGao", new { SuperRef = ViewBag.SuperRef })
+        </tbody>
+
+    </table>
+    @Html.Action("PaginationPartial", "MyTart", new { id = ViewBag.Pagination, TotalPage = ViewBag.TotalPage, tbodyPages = ViewBag.PageDiv, ControllerName = "Tender_GongGao" })
+</div>

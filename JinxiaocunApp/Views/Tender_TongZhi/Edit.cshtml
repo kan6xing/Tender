@@ -1,0 +1,70 @@
+﻿@model JinxiaocunApp.Models.Tender_TongZhi
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="panel panel-info">
+    @*<div class="panel-headings">
+        <span>
+            <img src="~/Images/news/ak15.jpg"></img>
+        </span>
+        <span>
+            <strong>通知公告-编辑</strong>
+        </span>
+    </div>*@
+    <div class="panel-body">
+        @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "onReloadClose('tender_tongzhi/index/','formDiv1')" }))
+        {
+            @*@Html.AntiForgeryToken()*@
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Tender_TongZhi</legend>
+
+                @Html.HiddenFor(model => model.TZID)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TitleT)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.TitleT, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TitleT)
+                </div>
+
+                <div class="editor-label">
+                    
+                </div>
+                <div class="editor-field">
+                    @Html.HiddenFor(model => model.CreateDateT)
+                   
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ContentT)
+                </div>
+                <div class="editor-field">
+                    @Html.TextAreaFor(model => model.ContentT)
+                    @Html.ValidationMessageFor(model => model.ContentT)
+                </div>
+
+                <p>
+                    <input type="submit" value="保存" class="btn btn-danger"/>
+                    @*|
+                    @Html.ActionLink("返回列表", "Index")*@
+                </p>
+            </fieldset>
+        }
+
+        
+        </div>
+    </div>
+ <script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+</script>
+@*<script>
+    $(function () {
+        var cked1 = CKEDITOR.replace('ContentT');
+       
+    });
+</script>*@

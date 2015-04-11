@@ -1,0 +1,147 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BLinkCompany>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullNameLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmallNameLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinyinLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DutyCodeLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkManLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceLevelLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAccountLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarterDaysLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BarterPercentLinkComp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemarkLinkComp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmallNameLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinyinLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DutyCodeLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkManLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceLevelLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAccountLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarterDaysLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarterPercentLinkComp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkLinkComp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LinkCompanyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LinkCompanyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LinkCompanyID })
+        </td>
+    </tr>
+}
+
+</table>

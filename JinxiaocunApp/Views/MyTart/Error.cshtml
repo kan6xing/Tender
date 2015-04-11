@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "异常";
+}
+
+<hgroup class="title">
+    <h1 class="error">错误.</h1>
+    <h2 class="error">@ViewBag.err</h2>
+    @Ajax.ActionLink("返回", (string)ViewBag.Act, (string)ViewBag.Con, new AjaxOptions { UpdateTargetId = "formDiv", InsertionMode = InsertionMode.Replace, HttpMethod = "get" })
+</hgroup>

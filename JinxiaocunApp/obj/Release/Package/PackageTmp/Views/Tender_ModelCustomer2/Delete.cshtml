@@ -1,0 +1,61 @@
+﻿@model JinxiaocunApp.Models.Tender_ModelCustomer2
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Tender_ModelCustomer2</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceLost)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceLost)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceUnit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceUnit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkMan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkMan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bemp_Gonggao.BGid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bemp_Gonggao.BGid)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_CustomerFiles>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustText)
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.CustFile)
+        </th>
+       
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustText)
+        </td>
+        <td>
+            @if(string.IsNullOrEmpty(item.CustFile))
+            {
+                <span>未上传文件</span>
+            }else
+            {
+                <a href="javascript:void(0);" onclick="downt('@item.CustFile')">下载</a>
+            }
+            
+            
+        </td>
+        
+        
+    </tr>
+}
+
+</table>

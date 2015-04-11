@@ -1,0 +1,283 @@
+﻿@model JinxiaocunApp.Models.Tender_ModelManage2
+@{
+    JinxiaocunApp.Models.Tender_GongGao tgModel = ViewBag.ggM;
+}
+
+
+<div class="panel panel-info">
+    <strong style="font-size:20pt;">供应商招标控制（模式二）</strong><span><label>倒计时：</label><input type="text" id="EndTime2" name="EndTime2"  class="text-danger" readonly="readonly" value="" /></span>
+    @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "incomm1ing", HttpMethod = "Post", InsertionMode = InsertionMode.InsertAfter, OnComplete = "tender_M2Secess" }))
+    {
+        @*@using (Html.BeginForm()) {*@
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Tender_ModelManage2</legend>
+            <table class="table-striped table-hover table-bordered" width="100%" style="line-height:26px">
+                <tr>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.tenderGonggao.Name)
+                        </div>
+                    </td>
+                    <td colspan="5">
+                        <div class="display-field">
+                            @tgModel.Name
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.tenderGonggao.SN)
+                        </div>
+                    </td>
+                    <td>
+                        @tgModel.SN
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80px">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.tenderGonggao.BeginDate)
+                        </div>
+                    </td>
+                    <td width="90px">
+                        @tgModel.BeginDate.Value.ToShortDateString()
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.tenderGonggao.EndDate)
+                    </div>
+                </td>
+                <td width="90px">
+                    @tgModel.EndDate.Value.ToShortDateString()
+                </td>
+                <td width="80px">
+                    <div class="editor-label">
+                        <label> 投标模式</label>
+                    </div>
+                </td>
+                <td>
+                    模式二
+                </td>
+
+                <td width="80px">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PriceUnit)
+                    </div>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.PriceUnit, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.PriceUnit)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.LabelFor(model => model.BeginTime)
+                </td>
+                <td>
+                    <div class="input-group date form_datetime" data-date="" data-date-format="hh:ii:00">
+                        @Html.TextBoxFor(model => model.BeginTime, new { @class = "form-control", size = "16", @readonly = "" })
+                        @*<input class="form-control" size="16" type="text" value="" readonly>*@
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        @Html.ValidationMessageFor(model => model.BeginTime)
+                    </div>
+                    @*@Html.TextBoxFor(model => model.BeginTime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BeginTime)*@
+                </td>
+                <td colspan="2">
+                    @Html.LabelFor(model => model.EndTime)
+                    
+                </td>
+                <td>
+                    <div class="input-group date form_datetime" data-date="" data-date-format="hh:ii:00">
+                        @Html.TextBoxFor(model => model.EndTime, new { @class = "form-control", size = "16", @readonly = "" })
+                        @*<input class="form-control" size="16" type="text" value="" readonly>*@
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        @Html.ValidationMessageFor(model => model.EndTime)
+                    </div>
+                    @*@Html.TextBoxFor(model => model.EndTime, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EndTime)*@
+                </td>
+                <td>
+                    <button type="submit" value="btn1" name="btnAction" >时间确认</button>
+                </td>
+                <td>
+                    @*<input type="submit" value="投标结束" name="btnAction" />*@
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8" style="background-color:#808080">
+                    <strong>竞标明细</strong>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div id="Tender2detail">
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+        @Html.HiddenFor(model => model.Tid)
+
+        @*<div class="editor-label">
+                @Html.LabelFor(model => model.DateToday)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DateToday)
+                @Html.ValidationMessageFor(model => model.DateToday)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BeginTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.BeginTime)
+                @Html.ValidationMessageFor(model => model.BeginTime)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EndTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EndTime)
+                @Html.ValidationMessageFor(model => model.EndTime)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Tid)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Tid)
+                @Html.ValidationMessageFor(model => model.Tid)
+            </div>
+
+            <p>
+
+            </p>*@
+    </fieldset>
+    }
+    </div>
+    <script type="text/javascript">
+        $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+        function start() {
+            var inc = document.getElementById('incomm1ing');
+            var wsImpl = window.WebSocket || window.MozWebSocket;
+            var form = document.getElementById('sendForm');
+            var input = document.getElementById('sendText');
+
+            inc.innerHTML += "connecting to server ..<br/>";
+
+            // create a new websocket and connect
+            if (window.ws && window.ws != "undefined") {
+
+            } else {
+                window.ws = new wsImpl(svIpc);
+            }
+
+
+            // when data is comming from the server, this metod is called
+            ws.onmessage = function (evt) {
+                inc.innerHTML += evt.data + '<br/>';
+                if (evt.data.indexOf('adreload') >= 0) {
+                    $("#Tender2detail").load("/Tender_ModelCustomer2/index/?id=@Model.Tid");
+                    Mana2Time();
+                }
+            };
+
+            // when the connection is established, this method is called
+            ws.onopen = function () {
+                inc.innerHTML += '.. connection open<br/>';
+                window.ws.send("UserType:Admin");
+                
+            };
+
+            // when the connection is closed, this method is called
+            ws.onclose = function () {
+                inc.innerHTML += '.. connection closed<br/>';
+                ws = "undefined";
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var val = input.value;
+                if (val.trim() == "")
+                    return;
+                ws.send(val);
+                input.value = "";
+            });
+
+        }
+
+        function Mana2Time()
+        {
+            
+            $.ajax({
+                url: "Tender_ModelManage2/LoadData/@Model.Tid",
+                success: function (result) {
+                    
+
+                    $("#EndTime2").val(result.EndTime);
+
+                   
+                    if (window.ttt) {
+                        if (window.ttt == "undefined") {
+                            if ($("#EndTime2").val().indexOf(":") < 0) {
+                                //clearInterval(ttt);
+                                //window.ttt = "undefined"
+                            } else {
+                                window.ttt = setInterval("timeBack2()", "1000");
+                            }
+                        } else {
+                            if ($("#EndTime2").val().indexOf(":") < 0) {
+                                clearInterval(ttt);
+                                window.ttt = "undefined"
+                            } else {
+                                //window.ttt = setInterval("timeBack()", "1000");
+                            }
+                        }
+                    } else {
+                        if ($("#EndTime2").val().indexOf(":") < 0) {
+                            //clearInterval(ttt);
+                            //window.ttt = "undefined"
+                        } else {
+                            window.ttt = setInterval("timeBack2()", "1000");
+                        }
+                    }
+                }
+            })
+        }
+
+        $(function () {
+            $('.form_datetime').datetimepicker({
+                language: 'zh-CN',
+                weekStart: 1,
+                todayBtn: 1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 1,
+                minuteStep: 1,
+                minView: 0,
+                maxView: 1,
+                forceParse: 0
+            });
+
+            start();
+            $("#Tender2detail").load("/Tender_ModelCustomer2/index/?id=@Model.Tid");
+            Mana2Time();
+            //$("#BeginTime").timepicker({ 'timeFormat': 'H:i:s', 'step': '5' });
+            //$("#EndTime").timepicker({ 'timeFormat': 'H:i:s', 'step': '5' });
+        })
+
+        function tender_M2Secess() {
+            window.ws.send("reload");
+            Mana2Time();
+        }
+    </script>
+<form id="sendForm">
+    <input id="sendText" placeholder="Text to send" />
+</form>
+<pre id="incomm1ing"></pre>

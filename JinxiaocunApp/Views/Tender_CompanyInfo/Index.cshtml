@@ -1,0 +1,111 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_CompanyInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bemplyee.NumberEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkMan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisterMoney)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassYearCheck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DelegateBook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicenceAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodeAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CertAtt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescsData)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItRemark)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bemplyee.NumberEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkMan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisterMoney)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassYearCheck)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DelegateBook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenceAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodeAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CertAtt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescsData)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItRemark)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CompID })
+        </td>
+    </tr>
+}
+
+</table>

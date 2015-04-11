@@ -1,0 +1,29 @@
+﻿@model JinxiaocunApp.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Role</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RoleName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RoleName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RoleDesc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RoleDesc)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.RoleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

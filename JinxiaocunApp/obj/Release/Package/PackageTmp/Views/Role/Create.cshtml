@@ -1,0 +1,53 @@
+﻿@model JinxiaocunApp.Models.Role
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@{
+    
+    if (ViewBag.user!=null){
+        foreach(string s in ViewBag.user)
+        {
+            <br />@s
+        }
+    }
+        
+    }
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "onReload('/role/index')" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Role</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleName)
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleDesc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RoleDesc)
+            @Html.ValidationMessageFor(model => model.RoleDesc)
+        </div>
+
+        <p>
+            <input type="submit" value="创建" class="btn btn-info" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BPartMenu>
+@if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+<ul id="@ViewBag.divid" class="mnmenu">
+    @foreach (var m in Model.Where(m => m.BParentID == ViewBag.BID).ToList())
+    {
+        
+        if(m.BOpenModel!=null&&m.BOpenModel.Trim().Equals("admin"))
+        {
+             if(Request.IsAuthenticated&&User.IsInRole("admin"))
+             {
+                
+             }else
+             {
+                 continue;
+             }
+        }else
+        {
+            
+        }
+       <li><a href='javascript:void(0);' onclick='addTab("@m.BOtherName","@m.BLinkUrl","@ViewBag.tagetdiv")'><span>@m.BOtherName</span></a>
+        
+    
+        @if (Model.Any(mm => mm.BParentID == m.BID))
+        {
+            <ul>
+            @foreach (var sm in Model.Where(sm => sm.BParentID == m.BID))
+            { 
+                <li><a href='javascript:void(0);' onclick='addTab("@sm.BOtherName","@sm.BLinkUrl","@ViewBag.tagetdiv")'><span>@sm.BOtherName</span></a>
+                    @if (Model.Any(mm => mm.BParentID == sm.BID))
+                    { 
+                        <ul>
+                            @foreach (var ssm in Model.Where(ssm => ssm.BParentID == sm.BID))
+                            { 
+                                <li><a href='#' onclick='MenuShow("@ssm.BLinkUrl")'><span>@ssm.BOtherName</span></a>
+
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+            </ul>
+        }
+       </li>
+    }
+    @*<li><a href="#"><span>基础管理</span></a>
+        <ul>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+        </ul>
+    </li>
+    <li><a href="#"><span>基础管理</span></a> </li>
+    <li><a href="#"><span>基础管理</span></a>
+        <ul>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+        </ul>
+    </li>
+    <li><a href="#"><span>基础管理</span>...</a></li>
+    <li><a href="#"><span>基础管理</span></a>
+        <ul>
+            <li><a href="#"><span>基础管理</span></a>
+                <ul>
+                    <li><a href="#"><span>美女如云</span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+            <li><a href="#"><span>基础管理</span></a></li>
+        </ul>
+    </li>*@
+</ul>
+<script>
+    $('#@ViewBag.divid').mnmenu();
+    function MenuShow(linkStr) {
+        $('#@ViewBag.tagetdiv').load(linkStr);
+    }
+    
+</script>
+<style>
+    .ui-menu { width: 150px; }
+</style>

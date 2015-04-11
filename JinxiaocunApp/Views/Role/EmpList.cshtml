@@ -1,0 +1,87 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BEmplyee>
+
+
+@using (Ajax.BeginForm("EmpList",new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReload('/bemplyee/index')" }))
+{
+    
+    
+    if (ViewData["vt"] != null)
+    {
+        JinxiaocunApp.Models.Role role = (JinxiaocunApp.Models.Role)ViewData["vt"];
+        ViewData["vt"] = role;
+       
+    }
+    else
+    {
+        <h1> no  !is  null</h1>
+    }
+
+<table>
+    <tr>
+    <th>
+           
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullNameEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SmallNameEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PinyinEmp)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.TelEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateEmp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RemarkEmp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.CheckBox("EmpListCk", false, new { value=item.EmpID})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmallNameEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinyinEmp)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.TelEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkEmp)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.EmpID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpID })*@
+        </td>
+    </tr>
+}
+
+</table>
+     <input type="submit" value="选择" />
+}

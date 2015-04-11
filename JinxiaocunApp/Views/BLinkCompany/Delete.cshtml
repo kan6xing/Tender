@@ -1,0 +1,158 @@
+﻿@model JinxiaocunApp.Models.BLinkCompany
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>BLinkCompany</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ParentID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ParentID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullNameLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullNameLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SmallNameLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SmallNameLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TypeLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TypeLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinyinLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinyinLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AreaLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AreaLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AddressLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AddressLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DutyCodeLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DutyCodeLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TelLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhoneLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmailLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmailLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LinkManLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LinkManLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriceLevelLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriceLevelLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StateLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StateLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BankLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BankLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BankAccountLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BankAccountLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BarterDaysLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BarterDaysLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BarterPercentLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BarterPercentLinkComp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RemarkLinkComp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RemarkLinkComp)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_ModelCustomer1>
+
+@{
+    ViewBag.Title = "Index";
+    int colC = 1;
+}
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<table>
+    <tr>
+        <th>序号</th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceThree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PriceUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkMan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkType)
+        </th>
+        
+        @*<th>
+            @Html.DisplayNameFor(model => model.bemp_Gonggao.BGid)
+        </th>*@
+ 
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @colC
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceThree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PriceUnit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkMan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkType)
+        </td>
+        
+        @*<td>
+         @Html.DisplayFor(modelItem => item.bemp_Gonggao.BGid)
+     </td>
+    <td>
+         @Html.ActionLink("Edit", "Edit", new { id=item.MID }) |
+         @Html.ActionLink("Details", "Details", new { id=item.MID }) |
+         @Html.ActionLink("Delete", "Delete", new { id=item.MID })
+     </td>*@
+    </tr>
+    colC++;
+}
+    <tr>
+        <td colspan="2">
+            @if (ViewBag.IsSmall)
+            { 
+            <span>最低价</span> 
+            }else
+            {
+                <span>最高价</span> 
+            }
+        </td>
+        <td><strong style="color:red;">@ViewBag.PriceD1</strong> </td>
+        <td><strong style="color:red;">@ViewBag.PriceD2</strong></td>
+        <td><strong style="color:red;">@ViewBag.PriceD3</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>

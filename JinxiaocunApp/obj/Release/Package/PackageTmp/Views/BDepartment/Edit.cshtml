@@ -1,0 +1,73 @@
+﻿@model JinxiaocunApp.Models.BDepartment
+
+@{
+    ViewBag.Title = "编辑";
+}
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bdepartment/index')" }))
+{
+@*@using (Html.BeginForm()) {*@
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BDepartment</legend>
+
+        @Html.HiddenFor(model => model.BID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BNumber)
+        </div>
+        <div class="editor-field">
+            
+            @Html.EditorFor(model => model.BNumber)
+            @Html.ValidationMessageFor(model => model.BNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BFullName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BFullName)
+            @Html.ValidationMessageFor(model => model.BFullName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BSmallName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BSmallName)
+            @Html.ValidationMessageFor(model => model.BSmallName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BPinyin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BPinyin)
+            @Html.ValidationMessageFor(model => model.BPinyin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BRemark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BRemark)
+            @Html.ValidationMessageFor(model => model.BRemark)
+        </div>
+
+        <p>
+            <input type="submit" value="保存" />
+        </p>
+    </fieldset>
+}
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+    $(function () {
+        PinyinAutoGen("BFullName", "BSmallName");
+        PinyinAutoGen("BFullName", "BPinyin");
+    });
+    </script>
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

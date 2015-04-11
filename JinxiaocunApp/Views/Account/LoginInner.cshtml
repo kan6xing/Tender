@@ -1,0 +1,95 @@
+﻿@model JinxiaocunApp.Models.LoginModel
+
+@{
+    ViewBag.Title = "登录";
+}
+<div class="panel panel-info">
+   <div class="panel-heading">
+       <span>
+           <img src="~/Images/news/ak24.jpg"></img>
+       </span>
+       <span style=" color:red;">
+          <strong>用户登录</strong> 
+       </span>
+   </div>
+    <div class="panel-body" style="min-height:130px;">
+        @*@using (Html.BeginForm(null,null, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {*@
+        @*@using (Ajax.BeginForm("LoginInner", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('登录',400,200)" }, new { @class = "form-horizontal", role = "form" }))
+            {*@
+        @*@Html.AntiForgeryToken()*@
+        @if (ViewBag.isTong||Request.IsAuthenticated)
+        {
+            <div style="margin-bottom:5px;">欢迎:</div>
+            <div style="margin-bottom:5px;">
+            <strong class="text-danger"> @if (ViewBag.isTong && !Request.IsAuthenticated) { 
+                                       @ViewBag.uName            
+                                                   }else
+                            {
+                                @User.Identity.Name
+                            } </strong>   </div>
+            <div style="margin-bottom:5px;">
+                登录本系统.&nbsp;
+                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                {
+                @*@Html.AntiForgeryToken()*@
+                <a href="javascript:document.getElementById('logoutForm').submit()">退出</a>
+                }
+            </div>
+        }
+        else
+        {
+            <form action="/" method="post" novalidate="novalidate" class="form-horizontal" , role="form">
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Log in Form</legend>
+                <div class="form-group" style="margin-bottom:0px;">
+                    @Html.LabelFor(m => m.UserName, new { @for = "UserName", @class = "control-label col-md-4 col-lg-4", style = "padding:0px;" })
+                    <div class="col-md-8 col-lg-8">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "公司名称" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:0px;">
+                    @Html.LabelFor(m => m.Password, new { @for = "Password", @class = "control-label col-md-4 col-lg-4", style = "padding:0px;" })
+                    <div class="col-md-8 col-lg-8">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "密码" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom:0px;">
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "control-label col-md-4 col-lg-4", style = "padding:0px;margn-bottom:0px;" })
+                    <div class="col-md-8 col-lg-8">
+                        <div class="switch pull-left" style=" width:50px;">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            
+                        </div>
+                        @*<div class="switch" data-on-label="SI" data-off-label="NO">
+                            <input type="checkbox" checked />
+                        </div>*@
+                             <div class="pull-right">
+                                 <input type="submit" value="登录" class="btn btn-default pull-right" style=" margin:0px; padding:3px;font-size:14px;" />
+                                 @Html.ActionLink("注册", "Register", null, new { @class = "btn btn-info pull-right", style = " margin:0px; padding:3px; margin-right:20px;" })
+                             </div>
+                        
+                        </div>
+                </div>
+            </fieldset>
+
+            @*<p>
+                如果您没有账号，请先 @Html.ActionLink("注册","Register")
+            </p>*@
+        </form>
+        }
+        
+    </div>
+   
+</div>
+
+
+@*<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+</script>*@
+

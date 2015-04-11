@@ -1,0 +1,40 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BEmplyee>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullNameEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SmallNameEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PinyinEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.bdepartment.BFullName)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateEmp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RemarkEmp)
+        </td>
+        <td>
+            @Ajax.ActionLink("编辑", "Edit", new { id = item.EmpID, SuperRef = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('职员信息-编辑')" })
+             |
+             @Ajax.ActionLink("查看", "Details", new { id = item.EmpID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('职员信息-查看')" })
+             |
+             @Ajax.ActionLink("删除", "Delete", new { id = item.EmpID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('职员信息-删除')" })
+        </td>
+    </tr>
+}
+

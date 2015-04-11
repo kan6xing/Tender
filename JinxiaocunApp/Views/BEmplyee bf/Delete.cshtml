@@ -1,0 +1,64 @@
+﻿@model JinxiaocunApp.Models.BEmplyee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>确定要删除吗?</h3>
+<fieldset>
+    <legend>BEmplyee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NumberEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NumberEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullNameEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullNameEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SmallNameEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SmallNameEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PinyinEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PinyinEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TelEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StateEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StateEmp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RemarkEmp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RemarkEmp)
+    </div>
+</fieldset>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnComplete = "onReloadClose('/bemplyee/index')" })){
+    <p>
+        <input type="submit" value="删除" /> 
+    </p>
+}

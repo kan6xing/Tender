@@ -1,0 +1,50 @@
+﻿<div id="@ViewBag.divid" class="tabsCla">
+    <ul>
+        @*<li><a href="#tabs-@ViewBag.divid">@ViewBag.name</a><span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>*@
+        @if (ViewBag.MenuM!=null)
+        {
+            foreach (JinxiaocunApp.Models.BPartMenu m in ViewBag.MenuM)
+            {
+                if (m.BOpenModel != null && m.BOpenModel.Trim().Equals("admin"))
+                {
+                    if (Request.IsAuthenticated && User.IsInRole("admin"))
+                    {
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+
+                }
+                <li><a href="@m.BLinkUrl.ToLower()">@m.BOtherName</a>@*<span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span>*@</li>
+            }
+        }
+    </ul>
+    @*<div id="tabs-@ViewBag.divid">
+        <p>建设中。。。</p>
+    </div>*@
+</div>
+<script>
+    $(function () {
+        $("#@ViewBag.divid").tabs({
+            beforeLoad: function (event, ui) {
+                ui.jqXHR.error(function () {
+                    ui.panel.html(
+            "不能加载此项，请确认你有足够的权限. " +
+            "如仍由问题联系管理员");
+                });
+            }
+        }).delegate("span.ui-icon-close", "click", function () {
+            var panelId = $(this).closest("li").remove().attr("aria-controls");
+            $("#" + panelId).remove();
+            //this.tabs("refresh");
+        });
+        @*$('#@ViewBag.divid').load("/Bemp_GongGao/Index");*@
+    });
+
+
+</script>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.BDepartment>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="panel panel-info">
+   @* <div class="panel-heading">
+        部门管理</div>*@
+    @if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+   
+    
+    <p>
+        @Ajax.ActionLink("新建", "Create", new { id = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('部门信息-新建')" }, new { @class="btn"})
+    </p>
+    <table class="table-striped table-hover table-bordered" width="100%">
+        <tr class="alert-info">
+            <th>
+                @Html.DisplayNameFor(model => model.BNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BSmallName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BPinyin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BRemark)
+            </th>
+            <th>
+            </th>
+        </tr>
+        <tbody id="@ViewBag.PageDiv">
+            @Html.Action("Pages", "BDepartment", new { SuperRef = ViewBag.SuperRef })
+        </tbody>
+    </table>
+    @Html.Action("PaginationPartial", "MyTart", new { id = ViewBag.Pagination, TotalPage = ViewBag.TotalPage, tbodyPages = ViewBag.PageDiv, ControllerName = "BDepartment" })
+</div>

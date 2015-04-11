@@ -1,0 +1,293 @@
+﻿@model JinxiaocunApp.Models.BEmplyee
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="panel panel-info" style="text-align:center">
+    <h1 style="color: #2E6E9E"><b>我的资料</b></h1>
+    <fieldset>
+        <legend>BEmplyee</legend>
+        <table class="table-striped table-hover table-bordered" width="100%" style="line-height:26px">
+            <tr>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.NumberEmp)
+                    </div>
+                </td>
+                <td colspan="3">
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.NumberEmp)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LinkMan)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.LinkMan)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td width="100PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LinkType)
+                    </div>
+                </td>
+                <td width="250px">
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.LinkType)
+                    </div>
+                </td>
+                <td width="100PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.RegisterMoney)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.RegisterMoney)
+                    </div>
+                </td>
+                <td width="130PX">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PassYearCheck)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.PassYearCheck)
+                        @*@Html.DropDownListFor(model => model.PassYearCheck, new[] { new SelectListItem() { Text = "是", Value = "true" }, new SelectListItem() { Text = "否", Value = "false" } })*@
+
+                    </div>
+                </td>
+            </tr>
+
+
+
+            <tr>
+
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CompanyType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.CompanyType)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.isPass)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.isPass)
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-label">
+                        @if(Model.isPass!=null&&Model.isPass)
+                        { 
+                            //*********若通过不可修改 可以删除此处内容*******
+                            @Html.ActionLink("资料修改","Edit")
+                        }
+                        else
+                        {
+                            @*@Ajax.ActionLink("资料修改", "Edit", "BEmplyee", new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','资料修改',1200,700)" })*@
+                            @Html.ActionLink("资料修改","Edit")
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DelegateBook)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.DelegateBook != null && !Model.DelegateBook.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.DelegateBook')">下载</a>
+                    }
+
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.LicenceAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.LicenceAtt != null && !Model.LicenceAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.LicenceAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CodeAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.CodeAtt != null && !Model.CodeAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.CodeAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
+            
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.TaxAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.TaxAtt != null && !Model.TaxAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.TaxAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CertAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    @if (Model.CertAtt != null && !Model.CertAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.CertAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.PromiseAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.PromiseAtt != null && !Model.PromiseAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.PromiseAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.SecretAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.SecretAtt != null && !Model.SecretAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.SecretAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DescsData)
+                    </div>
+                </td>
+
+
+                <td colspan="4">
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.DescsData)
+                        @Html.ValidationMessageFor(model => model.DescsData)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.ItRemark)
+                    </div>
+                </td>
+                <td colspan="4">
+                    <div class="editor-field">
+                        @Html.DisplayFor(model => model.ItRemark)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>备注</label>
+                </td>
+                <td colspan="5">
+                    <pre style="border:0px;">
+1、供应商投标资质申请时，需要将资料填写完整；
+2、供应商提报相关资料后，经过我司资质评定，确定入围后才能将招标资料下载（如技术文件图纸等）及参与该项目竞标。
+3、如需上传多个文件，请自行打包成RAR格式上传。
+                    </pre>
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+
+</div>

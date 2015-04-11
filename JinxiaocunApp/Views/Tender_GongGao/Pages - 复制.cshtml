@@ -1,0 +1,75 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Tender_GongGao>
+@foreach (var item in Model)
+{
+    <tr style="line-height:25px;" ondblclick="LoadShow('/Tender_GongGao/Details/@item.TaskID','招标公告-查看',1100,500)">
+        <td>
+            @Html.DisplayFor(modelItem => item.SN)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @foreach(JinxiaocunApp.Models.Tender_ProjectType mitem in ViewBag.ProType)
+            {
+                if(mitem.TypeValue.Equals(item.Types))
+                {
+                    @mitem.TypeName
+                    break;
+                }
+            }
+            @*@Html.DisplayFor(modelItem => item.Types)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssessEndDate)
+        </td>
+        <td>
+            @if(item.BeginDate==null||item.BeginDate>System.DateTime.Now.Date)
+            {
+                <label>未开始</label>
+            }else if(item.BeginDate<=System.DateTime.Now.Date&&item.EndDate>=System.DateTime.Now.Date)
+            {
+                <label>进行中</label>
+            }else
+            {
+                <label>已结束</label>
+            }
+        </td>
+
+        @*<td>
+                @Html.DisplayFor(modelItem => item.Descs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Counts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>*@
+        <td>
+            @*@Ajax.ActionLink("编辑", "Edit", new { id = item.TaskID, SuperRef = ViewBag.SuperRef }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-编辑')" })*@
+            |
+            @Ajax.ActionLink("查看", "Details", new { id = item.TaskID}, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-查看',1100,500)" })
+            |
+            @*@Ajax.ActionLink("删除", "Delete", new { id = item.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showW('招标公告-删除')" })*@
+
+        </td>
+    </tr>
+}

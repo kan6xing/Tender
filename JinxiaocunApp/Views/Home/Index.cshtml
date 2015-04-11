@@ -1,0 +1,33 @@
+﻿@if (1 == 2)
+    { 
+        <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+    }
+    
+<div id="topBody" style=" width:100%; height:100%;min-height:500px"></div>
+<div id="loadingdiv" style="display:none;"><img src="@Url.Content("~/Images/ajax-loader.gif")" alt="" /> </div>
+<script>
+    $(function () {
+        $(document).ajaxStart(function () {
+            var top = ($(window).height() - $("#loadingdiv").height()) / 2;
+            var left = ($(window).width() - $("#loadingdiv").width()) / 2;
+            //var scrollTop = $(document).scrollTop();
+            //var scrollLeft = $(document).scrollLeft();
+            $("#loadingdiv").css({ position: 'fixed', 'top': top , left: left }).show();
+
+        });
+
+        $(document).ajaxStop(function () {
+            $("#loadingdiv").hide();
+        });
+
+        $(document).ajaxComplete(function () {
+            $("#loadingdiv").hide();
+        });
+
+        $(document).ajaxError(function (event, xhr, options, exc) {
+            $("#loadingdiv").hide();
+            alert("Error requesting " + options.url + ": " + xhr.status + " " + xhr.statusText);
+        });
+    });
+    
+</script>

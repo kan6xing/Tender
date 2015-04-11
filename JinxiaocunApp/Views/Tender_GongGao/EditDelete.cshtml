@@ -1,0 +1,38 @@
+﻿@model JinxiaocunApp.Models.Tender_GongGao
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>删除？</h2>
+@using (Ajax.BeginForm("EditDelete", "Tender_GongGao", new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Post", InsertionMode = InsertionMode.Replace, OnSuccess = "onReloadClose('tender_gonggao/indexadmin','formDiv1')" }))
+{
+    @*@Html.AntiForgeryToken()*@
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tender_GongGao</legend>
+
+        @Html.HiddenFor(model => model.TaskID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDelete)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.IsDelete)*@
+            @Html.DropDownListFor(model => model.IsDelete, new[] { new SelectListItem()  { Text = "否", Value = "false" }, new SelectListItem(){ Text = "是", Value = "true" } })
+            @Html.ValidationMessageFor(model => model.IsDelete)
+        </div>
+        <p>
+            <input type="submit" value="修改"  class="btn btn-default"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+   
+</div>
+
+<script>
+    $.getScript("/Scripts/jquery.validate.unobtrusive.js");
+</script>

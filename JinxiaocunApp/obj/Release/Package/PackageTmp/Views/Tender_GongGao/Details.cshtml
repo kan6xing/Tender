@@ -1,0 +1,377 @@
+﻿@model JinxiaocunApp.Models.Tender_GongGao
+@if (1 == 2)
+{
+    <script type="text/javascript" src="../../Scripts/jquery-2.0.3-vsdoc.js"></script>
+}
+@{
+    ViewBag.Title = "Details";
+}
+<div class="panel panel-info">
+    <h2 class="text-primary">招标信息</h2>
+
+    <fieldset>
+        <legend>Tender_GongGao</legend>
+        <table class="table-striped table-hover table-bordered" width="100%" style="line-height:26px">
+            <tr>
+                <td width="80px;">
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </div>
+                </td>
+                <td colspan="5">
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Name)
+                        
+                        
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.BeginDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.BeginDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.EndDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.AssessEndDate)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.AssessEndDate)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Types)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @foreach (JinxiaocunApp.Models.Tender_ProjectType mitem in ViewBag.ProType)
+                        {
+                            if (mitem.TypeValue.Equals(Model.Types))
+                            {
+                                @mitem.TypeName
+                                break;
+                            }
+                        }
+                        @*@Html.DisplayFor(model => model.Types)*@
+                    </div>
+                </td>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.CautionMoney)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.CautionMoney)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.SN)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.SN)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.PayType)
+                    </div>
+                </td>
+                <td colspan="5">
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.PayType)
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan="6" style="background-color:#e0e0e0">
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Descs)
+                    </div>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <div class="display-field" style="min-height:50px;">
+                        @Html.DisplayFor(model => model.Descs)
+                    </div>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td colspan="6" style="background-color:#e0e0e0">
+                    采购明细
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="background-color:white">
+                    <table width="100%" class=" table-bordered" >
+                        @for (int i = 0; i < Model.Tender_Purchase_GongGaos.Count(); i++)
+                        {
+                            if (i == 0)
+                            {
+                                <tr>
+                                    <td width="40px">
+                                        <label>序号</label>
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(model => Model.Tender_Purchase_GongGaos[0].NameP)
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(model => Model.Tender_Purchase_GongGaos[0].SpecP)
+                                    </td>
+                                    <td width="60px">
+                                        @Html.LabelFor(model => Model.Tender_Purchase_GongGaos[0].CountP)
+                                    </td>
+                                    <td width="40px">
+                                        @Html.LabelFor(model => Model.Tender_Purchase_GongGaos[0].UnitP)
+                                    </td>
+                                    <td>
+                                        @Html.LabelFor(model => Model.Tender_Purchase_GongGaos[0].RemarkP)
+                                    </td>
+                                </tr>
+
+                            }
+                            <tr>
+                                <td>
+                                    @(i + 1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].NameP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].SpecP)
+                                </td>
+                                <td style="text-align:right">
+                                    @float.Parse(Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].CountP).ToString())
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].UnitP)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].RemarkP)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+            
+
+            @foreach (var m in Model.Tender_GongGao_Items)
+            {
+                
+                    <tr>
+
+                    <td colspan="1">
+
+                        @m.Name
+
+                    </td>
+                    <td colspan="3">
+
+                        @m.Descs
+
+                    </td>
+                    <td colspan="2">
+                        @*陈应光：招标结束不能下载*@
+                        @if (m.Atts != null && !(Model.IsZhongb != null && Model.IsZhongb))
+                        {
+                            if ((m.IsOpen != null && m.IsOpen) || ViewBag.bgid != 0)
+                            {
+                                string[] strs = m.Atts.Split(',');
+
+                                foreach (string s in strs)
+                                {
+                                    <a href="javascript:void(0);" onclick="downt('@s');">下载</a>
+                                }
+                            }
+                            else
+                            {
+                                <span>验证通过后下载</span>
+                            }
+                        }
+                        
+
+                    </td>
+                </tr>
+                
+                
+            }
+            <tr>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.Remark)
+                    </div>
+                </td>
+                <td colspan="5">
+                    <div class="display-field">
+                        @Html.DisplayFor(model => model.Remark)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.IsShenhe)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @*@Html.DisplayFor(model => model.IsShenhe)*@
+                        @if(Model.IsShenhe!=null&&Model.IsShenhe)
+                        {
+                            <span style="color:green">已验证</span>
+                        }else
+                        {
+                            <span style="color:red">未验证</span>
+                        }
+                        
+                    </div>
+                </td>
+
+                <td>
+                    <div class="display-label">
+                        @Html.DisplayNameFor(model => model.IsZhongb)
+                    </div>
+                </td>
+                <td>
+                    <div class="display-field">
+                        @*@Html.DisplayFor(model => model.IsZhongb)*@
+
+                        @if (Model.IsZhongb != null && Model.IsZhongb)
+                        {
+                            <span style="color:red">已结束</span>
+                        }
+                        else  if (Model.BeginDate == null || Model.BeginDate > System.DateTime.Now.Date)
+                        {
+                            <span>未开始</span>
+                        }
+                        else if (Model.BeginDate <= System.DateTime.Now.Date && Model.EndDate >= System.DateTime.Now.Date)
+                        {
+                            <span style="color:green">进行中</span>
+                        }
+                        else
+                        {
+                            <span style="color: green">进行中</span>
+                        }
+                    </div>
+                </td>
+
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+</div>
+
+        @*<div class="display-label">
+                 @Html.DisplayNameFor(model => model.SSN)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.SSN)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.PartmentT)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PartmentT)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.ProposerT)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ProposerT)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.CreateDate)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CreateDate)
+            </div>*@
+
+
+
+
+
+    </fieldset>
+    <p>
+        
+        @if (!(Request.IsAuthenticated && User.IsInRole("admin"))) { 
+            @Ajax.ActionLink("投标申请", "TenderRequest", new { id = Model.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','申请')" }, new { @class="btn btn-info"})
+
+        }
+        else
+        {
+            if((ViewBag.M1==ViewBag.M2)||ViewBag.M1)
+            {
+                <label>|</label>
+            @Ajax.ActionLink("三轮报价模式", "Create", "Tender_ModelManage1", new { TaskID = Model.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','三轮报价模式',1100,600)" }, new { @class = "btn btn-warning" }) <label>|</label>
+            }
+
+            if ((ViewBag.M1 == ViewBag.M2) || ViewBag.M2)
+            {
+                @Ajax.ActionLink("竞价模式", "Create", "Tender_ModelManage2", new { TaskID = Model.TaskID }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','竞价模式',1100,600)" }, new { @class = "btn btn-warning" }) 
+            }
+
+            
+        }
+
+        
+
+        @if (ViewBag.bgid != 0)
+        { 
+            if(ViewBag.M1)
+            {
+                <label>|</label>
+                @Ajax.ActionLink("开始投标", "Create", "Tender_ModelCustomer1", new { id = ViewBag.bgid }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','用户三轮报价模式',1100,600)" }, new { @class = "btn btn-warning" }) 
+            }
+            
+            
+            if(ViewBag.M2)
+            {
+                <label>|</label>
+            
+                @Ajax.ActionLink("开始投标", "Create", "Tender_ModelCustomer2", new { id = ViewBag.bgid }, new AjaxOptions { UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','用户竞价模式',1100,600)" }, new { @class = "btn btn-warning" })
+            }
+            
+        }
+        
+        
+    </p>
+

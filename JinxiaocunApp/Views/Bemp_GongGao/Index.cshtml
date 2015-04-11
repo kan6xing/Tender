@@ -1,0 +1,58 @@
+﻿@model IEnumerable<JinxiaocunApp.Models.Bemp_GongGao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-info">
+    
+
+    
+    <table class="table-striped table-hover table-bordered" width="100%">
+        <tr class="alert-info" style="line-height:27px">
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.SN)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsPassShen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.IsZhongb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsZhongb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TalkPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceUnit)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.BeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_GongGaos.AssessEndDate)
+            </th>*@
+
+           
+            <th></th>
+        </tr>
+
+        <tbody id="@ViewBag.PageDiv">
+            @Html.Action("Pages", "Bemp_GongGao", new { SuperRef = ViewBag.SuperRef })
+        </tbody>
+
+    </table>
+    @Html.Action("PaginationPartial", "MyTart", new { id = ViewBag.Pagination, TotalPage = ViewBag.TotalPage, tbodyPages = ViewBag.PageDiv, ControllerName = "bemp_gonggao" })
+</div>
