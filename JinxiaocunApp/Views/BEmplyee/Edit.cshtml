@@ -265,6 +265,23 @@
             <tr>
                 <td colspan="2">
                     <div class="editor-label">
+                        @Html.LabelFor(model => model.OpenAccountAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    <input type="file" name="fOpenAccountAtt" id="fOpenAccountAtt" onchange="ffOpenAccountAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+                        @Html.ValidationMessageFor(model => model.OpenAccountAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
                         @Html.LabelFor(model => model.DescsData)
                     </div>
                 </td>
@@ -320,6 +337,7 @@
                 @Html.TextBoxFor(model => model.PromiseAtt, new { style = "width:1px;", @readonly = "readonly" })
                 @Html.TextBoxFor(model => model.SecretAtt, new { style = "width:1px;", @readonly = "readonly" })
                 @Html.TextBoxFor(model => model.PeopleAtt, new { style = "width:1px;", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.OpenAccountAtt, new { style = "width:1px;", @readonly = "readonly" })
             </div>
         </div>
     </fieldset>
@@ -334,6 +352,10 @@
 
     function ffPeopleAtt() {
         $("#PeopleAtt").val(document.getElementById("fPeopleAtt").value);
+    }
+
+    function ffOpenAccountAtt() {
+        $("#OpenAccountAtt").val(document.getElementById("fOpenAccountAtt").value);
     }
 
     function ffPromiseAtt() {

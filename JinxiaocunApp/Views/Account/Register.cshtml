@@ -277,6 +277,23 @@
                     <tr>
                         <td colspan="2">
                             <div class="editor-label">
+                                @Html.LabelFor(model => model.bemplyee.OpenAccountAtt)
+                            </div>
+                        </td>
+
+                        <td colspan="2">
+                            <input type="file" name="fOpenAccountAtt" id="fOpenAccountAtt" onchange="ffOpenAccountAtt()" />
+                        </td>
+                        <td colspan="2">
+                            <div class="editor-field">
+                                @Html.ValidationMessageFor(model => model.bemplyee.OpenAccountAtt)
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="editor-label">
                                 @Html.LabelFor(model => model.bemplyee.DescsData)
                             </div>
                         </td>
@@ -342,6 +359,8 @@
                         @Html.TextBoxFor(model => model.bemplyee.PromiseAtt, new { style = "width:1px;", @readonly = "readonly" })
                         @Html.TextBoxFor(model => model.bemplyee.SecretAtt, new { style = "width:1px;", @readonly = "readonly" })
                         @Html.TextBoxFor(model => model.bemplyee.PeopleAtt, new { style = "width:1px;", @readonly = "readonly" })
+
+                        @Html.TextBoxFor(model => model.bemplyee.OpenAccountAtt, new { style = "width:1px;", @readonly = "readonly" })
                     </div>
                 </div>
             </fieldset>
@@ -362,6 +381,10 @@
     //    //if (document.getElementById("fCodeAtt").value.length > 0)
     //    $("#bemplyee_CodeAtt").val(document.getElementById("fCodeAtt").value);
     //}
+
+    function ffOpenAccountAtt() {
+        $("#bemplyee_OpenAccountAtt").val(document.getElementById("fOpenAccountAtt").value);
+    }
 
     function ffSecretAtt() {
         $("#bemplyee_SecretAtt").val(document.getElementById("fSecretAtt").value);

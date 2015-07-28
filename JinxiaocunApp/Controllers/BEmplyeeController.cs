@@ -196,7 +196,22 @@ namespace JinxiaocunApp.Controllers
                 HttpPostedFileBase fPromiseAtt = Request.Files["fPromiseAtt"];
                 HttpPostedFileBase fSecretAtt = Request.Files["fSecretAtt"];
                 HttpPostedFileBase fPeopleAtt = Request.Files["fPeopleAtt"];
+                HttpPostedFileBase fOpenAccountAtt = Request.Files["fOpenAccountAtt"];
 
+                //****************  开户许可证 **************
+
+                if (fOpenAccountAtt != null && !String.IsNullOrEmpty(fOpenAccountAtt.FileName))
+                {
+                    emp.OpenAccountAtt = DateTime.Now.ToString("yyyyMMdd") + Guid.NewGuid().ToString("N");
+                    Directory.CreateDirectory(Path.Combine(System.Web.Configuration.WebConfigurationManager.AppSettings["AttachmentRootPath"], (emp.OpenAccountAtt.Substring(0, 4) + @"\" + emp.OpenAccountAtt.Substring(4, 4) + @"\")));
+                    fOpenAccountAtt.SaveAs(Path.Combine(System.Web.Configuration.WebConfigurationManager.AppSettings["AttachmentRootPath"], (emp.OpenAccountAtt.Substring(0, 4) + @"\" + emp.OpenAccountAtt.Substring(4, 4) + @"\" + emp.OpenAccountAtt.Substring(8))));
+                    GenericDataAccess.UpdateBySql("Insert into YZAppAttachment(FileID,Name,Ext,Size,OwnerAccount) values(@FileID,@Name,@Ext,@Size,@OwnerAccount)", new string[,] {
+                    { "@FileID",emp.OpenAccountAtt,"DbType.String",null },
+                    { "@Name",Path.GetFileName(fOpenAccountAtt.FileName),"DbType.String",null },
+                    { "@Ext",Path.GetExtension(fOpenAccountAtt.FileName),"DbType.String",null },
+                    { "@Size",fOpenAccountAtt.ContentLength.ToString(),"DbType.Int32",null },
+                    { "@OwnerAccount","0","DbType.String",null } });
+                }
                 //****************  保密协议 **************
 
                 if (fSecretAtt != null && !String.IsNullOrEmpty(fSecretAtt.FileName))
