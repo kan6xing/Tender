@@ -341,12 +341,14 @@
             if((ViewBag.M1==ViewBag.M2)||ViewBag.M1)
             {
                 <label>|</label>
-            @Ajax.ActionLink("三轮报价模式", "Create", "Tender_ModelManage1", new { TaskID = Model.TaskID }, new AjaxOptions { Confirm = "确定?", UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','三轮报价模式',1100,600)" }, new { @class = "btn btn-warning" }) <label>|</label>
+                //Confirm = "确定?",
+            @Ajax.ActionLink("三轮报价模式", "Create", "Tender_ModelManage1", new { TaskID = Model.TaskID }, new AjaxOptions {  UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','三轮报价模式',1100,600)" }, new { @class = "btn btn-warning" }) <label>|</label>
             }
 
             if ((ViewBag.M1 == ViewBag.M2) || ViewBag.M2)
             {
-                @Ajax.ActionLink("竞价模式", "Create", "Tender_ModelManage2", new { TaskID = Model.TaskID }, new AjaxOptions { Confirm = "确定?", UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','竞价模式',1100,600)" }, new { @class = "btn btn-warning" }) 
+                //Confirm = "确定?",
+                @Ajax.ActionLink("竞价模式", "Create", "Tender_ModelManage2", new { TaskID = Model.TaskID }, new AjaxOptions {  UpdateTargetId = "formDiv1", HttpMethod = "Get", InsertionMode = InsertionMode.Replace, OnSuccess = "showDIV('formDiv1','竞价模式',1100,600)" }, new { @class = "btn btn-warning" }) 
             }
 
             

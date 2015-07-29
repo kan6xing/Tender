@@ -56,7 +56,11 @@ namespace JinxiaocunApp.Controllers.Tender
                     Tender_GongGao tgonggao = db.Tender_GongGaos.Find(TaskID);
                     if (tgonggao.TenderModel != null && tgonggao.TenderModel.Trim().Equals("竞价模式"))
                     {
-                        return Content("您已选择竞价模式，不能再选择三轮报价模式");
+                        //return Content("您已选择竞价模式，不能再选择三轮报价模式");
+                        if (db.Tender_ModelManage2.FirstOrDefault(m => m.Tid == TaskID) != null)
+                        {
+                            return Content("您已选择竞价模式并已操作，不能再选择三轮报价模式");
+                        }
                     }
                     tgonggao.TenderModel = "三轮报价模式";
                     
