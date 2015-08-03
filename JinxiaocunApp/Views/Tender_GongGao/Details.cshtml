@@ -175,7 +175,8 @@
                                     @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].SpecP)
                                 </td>
                                 <td style="text-align:right">
-                                    @float.Parse(Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].CountP).ToString())
+                                    @*@float.Parse(Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].CountP).ToString())*@
+                                    @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].CountP)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(model => Model.Tender_Purchase_GongGaos[i].UnitP)
