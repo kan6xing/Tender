@@ -198,6 +198,8 @@ namespace JinxiaocunApp.Controllers
                 HttpPostedFileBase fPeopleAtt = Request.Files["fPeopleAtt"];
                 HttpPostedFileBase fOpenAccountAtt = Request.Files["fOpenAccountAtt"];
 
+                HttpPostedFileBase fprojectAtt = Request.Files["fprojectAtt"];
+
                 //****************  开户许可证 **************
 
                 if (fOpenAccountAtt != null && !String.IsNullOrEmpty(fOpenAccountAtt.FileName))
@@ -210,6 +212,21 @@ namespace JinxiaocunApp.Controllers
                     { "@Name",Path.GetFileName(fOpenAccountAtt.FileName),"DbType.String",null },
                     { "@Ext",Path.GetExtension(fOpenAccountAtt.FileName),"DbType.String",null },
                     { "@Size",fOpenAccountAtt.ContentLength.ToString(),"DbType.Int32",null },
+                    { "@OwnerAccount","0","DbType.String",null } });
+                }
+
+                //****************  类似项目的经营业绩 **************
+
+                if (fprojectAtt != null && !String.IsNullOrEmpty(fprojectAtt.FileName))
+                {
+                    emp.projectAtt = DateTime.Now.ToString("yyyyMMdd") + Guid.NewGuid().ToString("N");
+                    Directory.CreateDirectory(Path.Combine(System.Web.Configuration.WebConfigurationManager.AppSettings["AttachmentRootPath"], (emp.projectAtt.Substring(0, 4) + @"\" + emp.projectAtt.Substring(4, 4) + @"\")));
+                    fprojectAtt.SaveAs(Path.Combine(System.Web.Configuration.WebConfigurationManager.AppSettings["AttachmentRootPath"], (emp.projectAtt.Substring(0, 4) + @"\" + emp.projectAtt.Substring(4, 4) + @"\" + emp.projectAtt.Substring(8))));
+                    GenericDataAccess.UpdateBySql("Insert into YZAppAttachment(FileID,Name,Ext,Size,OwnerAccount) values(@FileID,@Name,@Ext,@Size,@OwnerAccount)", new string[,] {
+                    { "@FileID",emp.projectAtt,"DbType.String",null },
+                    { "@Name",Path.GetFileName(fprojectAtt.FileName),"DbType.String",null },
+                    { "@Ext",Path.GetExtension(fprojectAtt.FileName),"DbType.String",null },
+                    { "@Size",fprojectAtt.ContentLength.ToString(),"DbType.Int32",null },
                     { "@OwnerAccount","0","DbType.String",null } });
                 }
                 //****************  保密协议 **************

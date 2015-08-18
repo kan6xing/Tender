@@ -266,6 +266,45 @@
                     </div>
                 </td>
             </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.OpenAccountAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.OpenAccountAtt != null && !Model.OpenAccountAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.OpenAccountAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.projectAtt)
+                    </div>
+                </td>
+                <td colspan="2">
+                    @if (Model.projectAtt != null && !Model.projectAtt.Trim().Equals(""))
+                    {
+                        <a href="javascript:void(0);" onclick="downt('@Model.projectAtt')">下载</a>
+                    }
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+
+                    </div>
+                </td>
+            </tr>
+
             <tr>
                 <td colspan="2">
                     <div class="editor-label">

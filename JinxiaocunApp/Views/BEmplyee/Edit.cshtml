@@ -282,6 +282,23 @@
             <tr>
                 <td colspan="2">
                     <div class="editor-label">
+                        @Html.LabelFor(model => model.projectAtt)
+                    </div>
+                </td>
+
+                <td colspan="2">
+                    <input type="file" name="fprojectAtt" id="fprojectAtt" onchange="ffprojectAtt()" />
+                </td>
+                <td colspan="2">
+                    <div class="editor-field">
+                        @Html.ValidationMessageFor(model => model.projectAtt)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="editor-label">
                         @Html.LabelFor(model => model.DescsData)
                     </div>
                 </td>
@@ -338,6 +355,8 @@
                 @Html.TextBoxFor(model => model.SecretAtt, new { style = "width:1px;", @readonly = "readonly" })
                 @Html.TextBoxFor(model => model.PeopleAtt, new { style = "width:1px;", @readonly = "readonly" })
                 @Html.TextBoxFor(model => model.OpenAccountAtt, new { style = "width:1px;", @readonly = "readonly" })
+
+                @Html.TextBoxFor(model => model.projectAtt, new { style = "width:1px;", @readonly = "readonly" })
             </div>
         </div>
     </fieldset>
@@ -356,6 +375,10 @@
 
     function ffOpenAccountAtt() {
         $("#OpenAccountAtt").val(document.getElementById("fOpenAccountAtt").value);
+    }
+
+    function ffprojectAtt() {
+        $("#projectAtt").val(document.getElementById("fprojectAtt").value);
     }
 
     function ffPromiseAtt() {

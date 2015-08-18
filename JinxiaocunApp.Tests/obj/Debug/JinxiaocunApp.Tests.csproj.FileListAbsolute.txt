@@ -73,10 +73,8 @@ D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.W
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.Web.Optimization.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\EntityFramework.dll
-D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\WebMatrix.WebData.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\WebGrease.dll
-D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\WebMatrix.Data.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\DotNetOpenAuth.AspNet.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\DotNetOpenAuth.Core.dll
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\Antlr3.Runtime.dll
@@ -100,9 +98,7 @@ D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.W
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\EntityFramework.xml
-D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\WebMatrix.WebData.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
-D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\WebMatrix.Data.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\DotNetOpenAuth.AspNet.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\DotNetOpenAuth.Core.xml
 D:\新建文件夹\new pro\JinxiaocunApp1\JinxiaocunApp.Tests\bin\Debug\DotNetOpenAuth.OAuth.Consumer.xml
