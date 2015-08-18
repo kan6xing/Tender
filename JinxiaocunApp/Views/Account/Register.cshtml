@@ -294,6 +294,23 @@
                     <tr>
                         <td colspan="2">
                             <div class="editor-label">
+                                @Html.LabelFor(model => model.bemplyee.projectAtt)
+                            </div>
+                        </td>
+
+                        <td colspan="2">
+                            <input type="file" name="fprojectAtt" id="fprojectAtt" onchange="ffprojectAtt()" />
+                        </td>
+                        <td colspan="2">
+                            <div class="editor-field">
+                                @Html.ValidationMessageFor(model => model.bemplyee.projectAtt)
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="editor-label">
                                 @Html.LabelFor(model => model.bemplyee.DescsData)
                             </div>
                         </td>
@@ -361,6 +378,7 @@
                         @Html.TextBoxFor(model => model.bemplyee.PeopleAtt, new { style = "width:1px;", @readonly = "readonly" })
 
                         @Html.TextBoxFor(model => model.bemplyee.OpenAccountAtt, new { style = "width:1px;", @readonly = "readonly" })
+                        @Html.TextBoxFor(model => model.bemplyee.projectAtt, new { style = "width:1px;", @readonly = "readonly" })
                     </div>
                 </div>
             </fieldset>
@@ -384,6 +402,10 @@
 
     function ffOpenAccountAtt() {
         $("#bemplyee_OpenAccountAtt").val(document.getElementById("fOpenAccountAtt").value);
+    }
+
+    function ffprojectAtt() {
+        $("#bemplyee_projectAtt").val(document.getElementById("fprojectAtt").value);
     }
 
     function ffSecretAtt() {

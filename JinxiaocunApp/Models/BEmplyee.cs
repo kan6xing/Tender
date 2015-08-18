@@ -110,10 +110,16 @@ namespace JinxiaocunApp.Models
         public string SecretAtt { get; set; }
 
         [Display(Name = "一般纳税人资格证明")]
+        [Required]
         public string PeopleAtt { get; set; }
 
         [Display(Name = "开户许可证")]
+        [Required]
         public string OpenAccountAtt { get; set; }
+
+        [Display(Name = "类似项目的经营业绩")]
+        [Required]
+        public string projectAtt { get; set; }
 
         [Display(Name = "其他说明")]
         public string ItRemark { get; set; }
@@ -178,6 +184,7 @@ namespace JinxiaocunApp.Models
             this.SecretAtt = bempf.SecretAtt;
             this.PeopleAtt = bempf.PeopleAtt;
             this.OpenAccountAtt = bempf.OpenAccountAtt;
+            this.projectAtt = bempf.projectAtt;
         }
     }
 }
